@@ -1,7 +1,7 @@
 # news-explorer-frontend
 Frontend for News-Explorer Diploma project
 
-[Ссылка на проект](https://mesto-russia-d4j1fi22y.vercel.app/)
+[Ссылка на проект](https://artvezhl.github.io/news-explorer-frontend/)
 
 ### Учебный проект, в котором реализованы: 
 - адаптивная верстка
@@ -9,10 +9,7 @@ Frontend for News-Explorer Diploma project
 ### Стек технологий:
 - HTML5
 - CSS3
-- JS ES6
-- OOP
 - Webpack
-- BEM
 
 ### Пакеты которые используются в сборках:
 - [Babel CLI](https://babeljs.io/docs/en/babel-cli#docsNav)
