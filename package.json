@@ -1,0 +1,26 @@
+{
+  "name": "news-explorer-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for News-Explorer Diploma project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "webpack-dev-server --mode development --open --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artvezhl/news-explorer-frontend.git"
+  },
+  "author": "Artemiy Vezhlivtsev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/artvezhl/news-explorer-frontend/issues"
+  },
+  "homepage": "https://github.com/artvezhl/news-explorer-frontend#readme",
+  "devDependencies": {
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
