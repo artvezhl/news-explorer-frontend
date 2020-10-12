@@ -1,0 +1,7 @@
+@import url('./__title/about__title.css');
+@import url('./__subtitle/about__subtitle.css');
+
+.about {
+  padding-top: 2rem;
+  padding-bottom: 3.75rem;
+}

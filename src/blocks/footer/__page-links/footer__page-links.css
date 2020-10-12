@@ -1,0 +1,6 @@
+@import url('../__page-link/footer__page-link.css');
+
+.footer__page-links {
+  display: flex;
+  flex-direction: column;
+}

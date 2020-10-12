@@ -1,0 +1,6 @@
+@import url('../__github-link/footer__github-link.css');
+@import url('../__facebook-link/footer__facebook-link.css');
+
+.footer__social-link {
+  padding-left: 1.4rem;
+}

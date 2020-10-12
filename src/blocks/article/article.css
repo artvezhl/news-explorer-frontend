@@ -1,0 +1,12 @@
+@import url('./__image/article__image.css');
+@import url('./__date/article__date.css');
+@import url('./__title/article__title.css');
+@import url('./__subtitle/article__subtitle.css');
+@import url('./__source/article__source.css');
+@import url('./__like-button/article__like-button.css');
+
+.article {
+  position: relative;
+  max-width: 18rem;
+  margin: 0 auto;
+}

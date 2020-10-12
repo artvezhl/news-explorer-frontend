@@ -1,0 +1,7 @@
+@import url('../__link/popup__link.css');
+
+.popup__links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}

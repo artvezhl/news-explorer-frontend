@@ -1,0 +1,21 @@
+@import url('./__title/cover__title.css');
+@import url('./__subtitle/cover__subtitle.css');
+@import url('./__main-block/cover__main-block.css');
+@import url('./__search-block/cover__search-block.css');
+@import url('./__input/cover__input.css');
+@import url('./__button/cover__button.css');
+
+.cover {
+  background-image: url('../../images/background-mini.png');
+  width: 100%;
+  color: white;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -1rem;
+  min-height: 536px;
+  padding-bottom: 1.5rem;
+}

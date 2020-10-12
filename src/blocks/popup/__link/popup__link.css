@@ -1,0 +1,8 @@
+.popup__link {
+  color: white;
+  text-decoration: none;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 3.25em;
+}

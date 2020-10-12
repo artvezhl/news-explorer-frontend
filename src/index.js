@@ -2,4 +2,5 @@
 // TODO доработать readme.md
 // TODO отработать по поддерживаемым браузерам и возможному созданию нового отдельного файла с браузерами
 
-import "./style.css";
+import "./vendor/normalize.css";
+import "./pages/index.css";

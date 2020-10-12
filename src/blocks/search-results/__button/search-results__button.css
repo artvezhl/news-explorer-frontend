@@ -1,0 +1,11 @@
+.search-results__button {
+  min-height: 56px;
+  min-width: 18rem;
+  background-color: white;
+  border: none;
+  border-radius: 80px;
+  font-family: Roboto;
+  font-size: 1.125rem;
+  line-height: 1.3em;
+  cursor: pointer;
+}

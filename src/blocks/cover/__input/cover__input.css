@@ -1,0 +1,31 @@
+.cover__input {
+  height: 3.5rem;
+  border-radius: 100px;
+  padding-left: 1.5em;
+  border: 1px solid #D1D2D6;
+  margin-top: -1rem;
+}
+
+::-moz-placeholder {
+  color: #B6BCBF;
+  font-family: Roboto;
+  font-size: 1rem;
+}
+
+::-webkit-input-placeholder {
+  color: #B6BCBF;
+  font-family: Roboto;
+  font-size: 1rem;
+}
+
+:-moz-placeholder {
+  color: #B6BCBF;
+  font-family: Roboto;
+  font-size: 1rem;
+}
+
+:-ms-input-placeholder {
+  color: #B6BCBF;
+  font-family: Roboto;
+  font-size: 1rem;
+}

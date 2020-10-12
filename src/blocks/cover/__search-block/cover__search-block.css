@@ -1,0 +1,7 @@
+.cover__search-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: max-content;
+  margin-top: 8.5rem;
+}

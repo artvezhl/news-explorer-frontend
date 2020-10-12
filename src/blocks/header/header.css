@@ -1,0 +1,23 @@
+@import url('./__title/header__title.css');
+@import url('./__mobile-menu/header__mobile-menu.css');
+
+.header {
+  top: 0;
+  left: 0;
+  margin-bottom: -80px;
+  display: flex;
+  width: calc(100% - 2rem);
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(196,196,196,.2);
+  z-index: 55;
+}
+
+.header_type_popup-closed {
+  position: absolute;
+}
+
+.header_type_popup-opened {
+  position: fixed;
+}
