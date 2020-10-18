@@ -1,0 +1,11 @@
+.popup-auth__reg-link {
+  color: #2F71E5;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+.popup-auth__reg-link:hover {
+  text-decoration: underline;
+}

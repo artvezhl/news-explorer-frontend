@@ -1,10 +1,9 @@
-.cover__input {
-  height: 3.5rem;
-  border-radius: 100px;
-  padding-left: 1.5em;
-  border: 1px solid #D1D2D6;
-  margin-top: -1rem;
+.inputs__item {
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  width: 100%;
   outline: none;
+  padding-bottom: 10px;
 }
 
 ::-moz-placeholder {

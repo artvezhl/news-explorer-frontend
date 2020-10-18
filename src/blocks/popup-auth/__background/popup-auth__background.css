@@ -1,0 +1,14 @@
+@import url('../__title/popup__title.css');
+@import url('../../inputs/inputs.css');
+@import url('../__button/popup-auth__button.css');
+@import url('../__subtitle/popup-auth__subtitle.css');
+
+.popup-auth__background {
+  position: relative;
+  background: white;
+  opacity: 1;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  height: 100vh;
+  margin-top: -20px;
+}

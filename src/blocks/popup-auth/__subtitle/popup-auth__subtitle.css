@@ -1,0 +1,10 @@
+@import url('../__reg-link/popup-auth__reg-link.css');
+
+.popup-auth__subtitle {
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+

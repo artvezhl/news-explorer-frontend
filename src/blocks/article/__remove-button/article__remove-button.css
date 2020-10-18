@@ -1,0 +1,11 @@
+.article__remove-button {
+  background-image: url("../../../images/remove-button.svg");
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}

@@ -6,12 +6,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
+const PATHS = {
+  src: path.resolve(process.cwd(), 'src'),
+  dist: path.resolve(process.cwd(), 'dist'),
+}
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: {
+    main: `${PATHS.src}/index.js`,
+    second: `${PATHS.src}/articles/index.js`,
+  },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[chunkhash].js'
+    path: PATHS.dist,
+    filename: './scripts/[name].[chunkhash].js'
   },
   module: {
     rules: [
@@ -27,7 +34,7 @@ module.exports = {
           {
             loader:'css-loader',
             options: {
-              importLoaders: 2
+              importLoaders: 3
             }
           },
           'postcss-loader'
@@ -52,12 +59,15 @@ module.exports = {
       {
         test: /\.(eot|ttf|woff|woff2)$/,
         loader: 'file-loader?name=./vendor/[name].[ext]'
-      }
+      },
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css'
+      filename: './styles/index.[contenthash].css'
+    }),
+    new MiniCssExtractPlugin({
+      filename: './styles/articles.[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -70,7 +80,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['main'],
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/articles/index.html',
+      filename: './articles.html',
+      chunks: ['second'],
     }),
     new webpack.DefinePlugin({
       'NODE_ENV': JSON.stringify(process.env.NODE_ENV)

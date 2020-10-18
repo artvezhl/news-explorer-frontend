@@ -1,4 +1,5 @@
 @import url('./__background/popup__background.css');
+@import url('./__mobile-menu/popup__mobile-menu.css');
 
 .popup {
   display: none;

@@ -4,6 +4,9 @@
 @import url('./__subtitle/article__subtitle.css');
 @import url('./__source/article__source.css');
 @import url('./__like-button/article__like-button.css');
+@import url('./__remove-button/article__remove-button.css');
+@import url('./__keywords/article__keywords.css');
+@import url('./__keyword/article__keyword.css');
 
 .article {
   position: relative;
