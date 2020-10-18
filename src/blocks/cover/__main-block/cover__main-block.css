@@ -4,3 +4,10 @@
   align-items: flex-start;
   margin-top: 5rem;
 }
+
+@media screen and (min-width: 768px) {
+  .cover__main-block {
+    margin-top: 5.5rem;
+    margin-left: 123px;
+  }
+}

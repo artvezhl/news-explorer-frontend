@@ -4,4 +4,16 @@
   justify-content: space-between;
   height: max-content;
   margin-top: 8.5rem;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .cover__search-block {
+    flex-direction: row;
+    margin-top: 3rem;
+    position: relative;
+    width: 452px;
+    margin-left: 160px;
+    padding: 0;
+  }
 }

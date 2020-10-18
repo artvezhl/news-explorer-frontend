@@ -1,3 +1,11 @@
 .slim-block {
-  padding: 0 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .slim-block {
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+  }
 }

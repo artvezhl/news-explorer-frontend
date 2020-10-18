@@ -1,5 +1,6 @@
 @import url('__logo/header__logo.css');
 @import url('./__mobile-menu/header__mobile-menu.css');
+@import url('./__menu/header__menu.css');
 
 .header {
   position: absolute;
@@ -8,6 +9,7 @@
   margin-bottom: -80px;
   display: flex;
   width: calc(100% - 2rem);
+  max-height: 66px;
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem;
@@ -16,4 +18,11 @@
 
 .header_type_popup-opened {
   position: fixed;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: calc(100% - 5rem);
+    padding: 12px;
+  }
 }

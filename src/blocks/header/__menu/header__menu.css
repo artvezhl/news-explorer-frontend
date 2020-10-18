@@ -1,0 +1,16 @@
+@import url('../__menu-list/header__menu-list.css');
+
+.header__menu {
+}
+
+@media screen and (min-width: 320px) {
+  .header__menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__menu {
+    display: block;
+  }
+}

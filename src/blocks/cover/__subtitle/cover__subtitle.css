@@ -4,3 +4,9 @@
   line-height: 1.3em;
   margin-bottom: 0;
 }
+
+@media screen and (min-width: 768px) {
+  .cover__subtitle {
+    max-width: 452px;
+  }
+}

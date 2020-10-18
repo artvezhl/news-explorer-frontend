@@ -2,6 +2,7 @@
 @import url('./__background/popup-auth__background.css');
 
 .popup-auth {
+  display: none;
   position: fixed;
   width: 100%;
   height: 100%;

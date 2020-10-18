@@ -19,3 +19,11 @@
   min-height: 536px;
   padding-bottom: 3rem;
 }
+
+@media screen and (min-width: 768px) {
+  .cover {
+    background-image: url('../../images/background-mid.png');
+    max-height: 400px;
+    min-height: 400px;
+  }
+}

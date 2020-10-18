@@ -7,3 +7,14 @@
   line-height: 1.5em;
   cursor: pointer;
 }
+
+@media screen and (min-width: 768px) {
+  .cover__button {
+    margin-top: 0;
+    position: absolute;
+    width: 160px;
+    top: 0;
+    right: 0;
+    height: 58px;
+  }
+}

@@ -1,0 +1,10 @@
+@import url('../__link/header__link.css');
+@import url('../__button/header__button.css');
+@import url('../__main-page/header__main-page.css');
+
+.header__menu-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  align-items: center;
+}

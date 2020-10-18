@@ -6,14 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>NewsExplorer</title>
   <link rel="shortcut icon" href="<%= require('./images/favicon.png') %>" type="image/png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
 </head>
 <!--TODO test colors-->
 <!-- TODO customize links -->
 <body>
   <div class="root">
     <main class="main">
-      <header class="header">
+      <header class="header slim-block">
         <a href="index.html" class="header__logo">NewsExplorer</a>
+        <nav class="header__menu">
+          <ul class="header__menu-list">
+            <li class="header__main-page"><a href="index.html" class="header__link">Главная</a></li>
+            <li class="header__auth"><button class="header__button button">Авторизоваться</button></li>
+          </ul>
+        </nav>
         <button class="header__mobile-menu header__mobile-menu_type_closed"></button>
       </header>
       <section class="cover">
@@ -21,7 +28,7 @@
           <h1 class="cover__title">Что творится в мире?</h1>
           <p class="cover__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         </div>
-        <div class="cover__search-block slim-block">
+        <div class="cover__search-block">
           <input type="text" class="cover__input" placeholder="Политика">
           <button class="cover__button button">Искать</button>
         </div>
@@ -30,7 +37,7 @@
         <h2 class="search-results__title">Результаты поиска</h2>
         <div class="search-results__articles">
           <article class="search-results__article article">
-            <button class="article__like-button slim-block"></button>
+            <button class="article__like-button"></button>
             <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
             <p class="article__date slim-block">2 августа, 2019</p>
             <h3 class="article__title slim-block">Национальное достояние – парки</h3>
@@ -38,7 +45,7 @@
             <p class="article__source slim-block">Лента.ру</p>
           </article>
           <article class="search-results__article article">
-            <button class="article__like-button slim-block"></button>
+            <button class="article__like-button"></button>
             <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
             <p class="article__date slim-block">2 августа, 2019</p>
             <h3 class="article__title slim-block">Национальное достояние – парки</h3>
@@ -46,7 +53,7 @@
             <p class="article__source slim-block">Лента.ру</p>
           </article>
           <article class="search-results__article article">
-            <button class="article__like-button slim-block"></button>
+            <button class="article__like-button"></button>
             <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
             <p class="article__date slim-block">2 августа, 2019</p>
             <h3 class="article__title slim-block">Национальное достояние – парки</h3>
@@ -54,7 +61,7 @@
             <p class="article__source slim-block">Лента.ру</p>
           </article>
           <article class="search-results__article article">
-            <button class="article__like-button slim-block"></button>
+            <button class="article__like-button"></button>
             <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
             <p class="article__date slim-block">2 августа, 2019</p>
             <h3 class="article__title slim-block">Национальное достояние – парки</h3>
@@ -62,7 +69,7 @@
             <p class="article__source slim-block">Лента.ру</p>
           </article>
           <article class="search-results__article article">
-            <button class="article__like-button slim-block"></button>
+            <button class="article__like-button"></button>
             <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
             <p class="article__date slim-block">2 августа, 2019</p>
             <h3 class="article__title slim-block">Национальное достояние – парки</h3>
@@ -104,7 +111,7 @@
         <button class="popup__button button">Авторизоваться</button>
       </div>
     </section>
-    <section class="popup-auth popup-auth_is-opened">
+    <section class="popup-auth">
       <div class="popup-auth__background slim-block">
         <h2 class="popup-auth__title">Вход</h2>
         <div class="popup-auth__inputs inputs">
