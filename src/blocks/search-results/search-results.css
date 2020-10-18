@@ -3,8 +3,16 @@
 @import url('./__button/search-results__button.css');
 
 .search-results {
+  display: flex;
+  flex-direction: column;
   background-color: #F5F6F7;
   margin-top: -2.25rem;
-  padding-bottom: 2rem;
   padding-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .search-results {
+    padding-top: 2.6rem;
+    max-height: 654px;
+  }
 }

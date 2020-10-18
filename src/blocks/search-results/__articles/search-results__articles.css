@@ -5,3 +5,10 @@
   grid-gap: 10px;
   margin: 0;
 }
+
+@media screen and (min-width: 768px) {
+  .search-results__articles {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 0.8rem;
+  }
+}
