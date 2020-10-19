@@ -1,0 +1,8 @@
+@import url('../__title/about__title.css');
+@import url('../__subtitle/about__subtitle.css');
+
+@media screen and (min-width: 768px) {
+  .about__info {
+    margin-left: 32px;
+  }
+}

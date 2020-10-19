@@ -1,2 +1,14 @@
 @import url('./__links/footer__links.css');
 @import url('./__copyright/footer__copyright.css');
+
+.footer {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+  }
+}

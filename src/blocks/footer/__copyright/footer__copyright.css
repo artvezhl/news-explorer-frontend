@@ -6,3 +6,9 @@
   line-height: .375em;
   padding-bottom: .375rem;
 }
+
+@media screen and (min-width: 768px) {
+  .footer__copyright {
+    padding-top: .25rem;
+  }
+}
