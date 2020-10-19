@@ -1,0 +1,7 @@
+.header__saved-page {
+  border-bottom: 3px solid white;
+  height: 56px;
+  display: none;
+  align-items: center;
+  margin-left: 16px;
+}

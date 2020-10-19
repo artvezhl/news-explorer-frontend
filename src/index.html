@@ -17,8 +17,15 @@
         <a href="index.html" class="header__logo">NewsExplorer</a>
         <nav class="header__menu">
           <ul class="header__menu-list">
-            <li class="header__main-page"><a href="index.html" class="header__link">Главная</a></li>
-            <li class="header__auth"><button class="header__button button">Авторизоваться</button></li>
+            <li class="header__main-page header__main-page_active"><a href="index.html" class="header__link">Главная</a></li>
+            <li class="header__saved-page"><a href="index.html" class="header__link">Сохраненные статьи</a></li>
+            <li class="header__auth"><button class="header__button button header__button_type_login header__button_active">Авторизоваться</button></li>
+            <li class="header__auth">
+              <button class="header__button header__button_type_logout button">
+                <p class="header__auth-name">Грета</p>
+                <img src="<%= require('./images/logout-white.svg') %>" alt="logout icon" class="header__logout-icon">
+              </button>
+            </li>
           </ul>
         </nav>
         <button class="header__mobile-menu header__mobile-menu_type_closed"></button>

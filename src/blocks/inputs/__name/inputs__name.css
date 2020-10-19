@@ -5,3 +5,9 @@
   line-height: 14px;
   color: #2F71E5;
 }
+
+@media screen and (min-width: 768px) {
+  .inputs__name {
+    margin-top: 12px;
+  }
+}

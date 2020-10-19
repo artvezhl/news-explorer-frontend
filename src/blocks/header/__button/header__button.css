@@ -1,10 +1,13 @@
+@import url('../__logout-icon/header__logout-icon.css');
+@import url('./_type/header__button_type.css');
+
 .header__button {
-  width: 152px;
+  display: none;
   height: 40px;
   background: transparent;
   border: 1px solid #FFFFFF;
   padding: 0;
-  margin: 0;
+  margin: 0 0 0 16px;
   font-family: Roboto;
   font-weight: 500;
   font-size: 16px;

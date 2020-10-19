@@ -12,6 +12,7 @@ const closeButton = document.querySelector('.popup__mobile-menu');
 const popup = document.querySelector('.popup');
 const authButton = document.querySelector('.popup__button');
 const popupAuth = document.querySelector('.popup-auth');
+const headerAuthButton = document.querySelector('.header__button');
 
 const scrollY = document.body.style.top;
 document.body.style.position = '';
@@ -40,3 +41,7 @@ authButton.addEventListener('click', () => {
   header.classList.add('header_type_popup-opened');
   menuButton.classList.add('header__mobile-menu_type_opened');
 });
+
+headerAuthButton.addEventListener('click', () => {
+  popupAuth.classList.toggle('popup_is-opened');
+})
