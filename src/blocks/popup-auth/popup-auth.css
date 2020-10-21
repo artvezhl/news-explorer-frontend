@@ -1,5 +1,6 @@
 @import url('./_is-opened/popup-auth_is-opened.css');
 @import url('./__background/popup-auth__background.css');
+@import url('./__button/_active/popup-auth__button_active.css');
 
 .popup-auth {
   display: none;

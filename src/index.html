@@ -134,10 +134,12 @@
         <div class="popup-auth__inputs inputs">
           <p class="inputs__name">Email</p>
           <input type="email" class="inputs__item" placeholder="Введите почту">
+          <span class="error-message error-message__hidden">Неправильный формат email</span>
           <p class="inputs__name">Пароль</p>
-          <input type="email" class="inputs__item" placeholder="Введите пароль">
+          <input type="password" class="inputs__item" placeholder="Введите пароль">
+          <span class="error-message error-message__hidden"></span>
         </div>
-        <button class="popup-auth__button button">Войти</button>
+        <button class="popup-auth__button button popup-auth__button_active">Войти</button>
         <p class="popup-auth__subtitle">или <a href="" class="popup-auth__reg-link">Зарегистрироваться</a></p>
         <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup-auth__close">
       </div>
