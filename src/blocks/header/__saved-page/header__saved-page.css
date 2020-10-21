@@ -5,3 +5,9 @@
   align-items: center;
   margin-left: 16px;
 }
+
+@media screen and (min-width: 1024px) {
+  .header__saved-page {
+    margin-left: 32px;
+  }
+}

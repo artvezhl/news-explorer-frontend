@@ -7,16 +7,15 @@
 @import url('./__remove-button/article__remove-button.css');
 @import url('./__keywords/article__keywords.css');
 @import url('./__keyword/article__keyword.css');
+@import url('./__remove/article__remove.css');
+@import url('./__remove-phrase/article__remove-phrase.css');
 
 .article {
   position: relative;
-  max-width: 18rem;
   margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {
   .article {
-    max-width: 224px;
-    max-height: 420px;
   }
 }

@@ -5,3 +5,18 @@
   color: rgba(26, 27, 34, 0.5);
   margin: 0;
 }
+
+@media screen and (min-width: 768px) {
+  .articles-info__place {
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: 85px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .articles-info__place {
+    font-size: 18px;
+    margin-top: 110px;
+  }
+}

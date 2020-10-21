@@ -36,39 +36,58 @@
           <p class="cover__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         </div>
         <div class="cover__search-block">
-          <input type="text" class="cover__input" placeholder="Политика">
+          <input type="text" class="cover__input" placeholder="Введите тему новости">
           <button class="cover__button button">Искать</button>
         </div>
       </section>
       <section class="search-results slim-block">
-        <h2 class="search-results__title">Результаты поиска</h2>
-        <div class="search-results__articles">
-          <article class="search-results__article article">
-            <button class="article__like-button"></button>
-            <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
-            <p class="article__date">2 августа, 2019</p>
-            <h3 class="article__title">Национальное достояние – парки</h3>
-            <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="article__source">Лента.ру</p>
-          </article>
-          <article class="search-results__article article">
-            <button class="article__like-button"></button>
-            <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
-            <p class="article__date">2 августа, 2019</p>
-            <h3 class="article__title">Национальное достояние – парки</h3>
-            <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="article__source">Лента.ру</p>
-          </article>
-          <article class="search-results__article article">
-            <button class="article__like-button"></button>
-            <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
-            <p class="article__date">2 августа, 2019</p>
-            <h3 class="article__title">Национальное достояние – парки</h3>
-            <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
-            <p class="article__source">Лента.ру</p>
-          </article>
+        <div class="search-results__ready">
+          <h2 class="search-results__title">Результаты поиска</h2>
+          <div class="search-results__articles">
+            <article class="search-results__article article">
+              <button class="article__like-button"></button>
+              <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Национальное достояние – парки</h3>
+              <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
+              <p class="article__source">Лента.ру</p>
+            </article>
+            <article class="search-results__article article">
+              <button class="article__like-button"></button>
+              <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Национальное достояние – парки</h3>
+              <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
+              <p class="article__source">Лента.ру</p>
+            </article>
+            <article class="search-results__article article">
+              <button class="article__like-button"></button>
+              <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Национальное достояние – парки</h3>
+              <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
+              <p class="article__source">Лента.ру</p>
+            </article>
+            <article class="search-results__article article">
+              <button class="article__like-button"></button>
+              <img src="<%= require('./images/article-image.jpg') %>" alt="Изображение к статье" class="article__image">
+              <p class="article__date">2 августа, 2019</p>
+              <h3 class="article__title">Национальное достояние – парки</h3>
+              <p class="article__subtitle">В 2016 году Америка отмечала важный юбилей: сто лет назад здесь начала складыв...</p>
+              <p class="article__source">Лента.ру</p>
+            </article>
+          </div>
+          <button class="search-results__button">Показать еще</button>
         </div>
-        <button class="search-results__button">Показать еще</button>
+        <div class="search-results__searching">
+          <div class="search-results__preloader circle-preloader"></div>
+          <p class="search-results__loading">Идет поиск новостей...</p>
+        </div>
+        <div class="search-results__empty">
+          <img src="<%= require('./images/not-found.svg') %>" alt="Ничего не найдено" class="search-results__empty-image">
+          <h3 class="search-results__empty-title">Ничего не найдено</h3>
+          <p class="search-results__empty-subtitle">К сожалению по вашему запросу ничего не найдено.</p>
+        </div>
       </section>
       <section class="about slim-block">
         <img src="<%= require('./images/avatar.jpg') %>" alt="Фото автора" class="about__image">
@@ -83,11 +102,15 @@
       <section class="footer__links">
         <div class="footer__page-links">
           <a href="./index.html" class="footer__page-link">Главная</a>
-          <a href="https://praktikum.yandex.ru/" class="footer__page-link">Яндекс.Практикум</a>
+          <a href="https://praktikum.yandex.ru/" target="_blank" class="footer__page-link">Яндекс.Практикум</a>
         </div>
         <div class="footer__social-links">
-          <a href="https://github.com/artvezhl" class="footer__social-link"><img src="images/github.svg" alt="Иконка Github" class="footer__github-link"></a>
-          <a href="https://www.facebook.com/artemiy.vezhlivtsev" class="footer__social-link"><img src="images/facebook.svg" alt="Иконка Facebook" class="footer__facebook-link"></a>
+          <a href="https://github.com/artvezhl" target="_blank" class="footer__social-link">
+            <img src="<%= require('./images/github.svg') %>" alt="Иконка Github" class="footer__github-link">
+          </a>
+          <a href="https://www.facebook.com/artemiy.vezhlivtsev" target="_blank" class="footer__social-link">
+            <img src="<%= require('./images/facebook.svg') %>" alt="Иконка Facebook" class="footer__facebook-link">
+          </a>
         </div>
       </section>
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
@@ -106,7 +129,7 @@
       </div>
     </section>
     <section class="popup-auth">
-      <div class="popup-auth__background slim-block">
+      <div class="popup-auth__background">
         <h2 class="popup-auth__title">Вход</h2>
         <div class="popup-auth__inputs inputs">
           <p class="inputs__name">Email</p>
@@ -116,6 +139,7 @@
         </div>
         <button class="popup-auth__button button">Войти</button>
         <p class="popup-auth__subtitle">или <a href="" class="popup-auth__reg-link">Зарегистрироваться</a></p>
+        <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup-auth__close">
       </div>
     </section>
   </div>

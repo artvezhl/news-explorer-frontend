@@ -30,7 +30,13 @@ module.exports = {
       {
         test: /\.css$/i,
         use: [
-          (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
+          (isDev ? 'style-loader' : {
+            loader: MiniCssExtractPlugin.loader,
+            options:
+              {
+                publicPath: '../../'
+              },
+          }),
           {
             loader:'css-loader',
             options: {
@@ -58,16 +64,16 @@ module.exports = {
       },
       {
         test: /\.(eot|ttf|woff|woff2)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]'
+        loader: 'file-loader',
+        options: {
+          name: './src/vendor/fonts/[name].[ext]'
+        },
       },
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: './styles/index.[contenthash].css'
-    }),
-    new MiniCssExtractPlugin({
-      filename: './styles/articles.[contenthash].css'
+      filename: 'styles/[name].[contenthash].css'
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
@@ -86,7 +92,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/articles/index.html',
-      filename: './articles.html',
+      filename: 'articles.html',
       chunks: ['second'],
     }),
     new webpack.DefinePlugin({

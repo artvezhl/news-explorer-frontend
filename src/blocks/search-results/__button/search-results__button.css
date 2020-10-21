@@ -22,3 +22,12 @@
     margin-bottom: 40px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .search-results__button {
+    margin-top: 0;
+    margin-bottom: 80px;
+    min-height: 64px;
+    min-width: 288px;
+  }
+}

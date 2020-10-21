@@ -1,3 +1,9 @@
 .header__button_type_login {
   width: 152px;
 }
+
+@media screen and (min-width: 1024px) {
+  .header__button_type_login {
+    width: 176px;
+  }
+}

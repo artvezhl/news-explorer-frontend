@@ -10,10 +10,16 @@
 @media screen and (min-width: 768px) {
   .cover__search-block {
     flex-direction: row;
-    margin-top: 3rem;
     position: relative;
     width: 452px;
-    margin-left: 160px;
+    margin: 3rem auto 0;
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .cover__search-block {
+    width: 608px;
+    margin-top: 4rem;
   }
 }

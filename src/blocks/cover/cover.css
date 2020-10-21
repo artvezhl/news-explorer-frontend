@@ -27,3 +27,10 @@
     min-height: 400px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .cover {
+    background-image: url('../../images/background.jpg');
+    min-height: 576px;
+  }
+}

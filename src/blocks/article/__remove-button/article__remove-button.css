@@ -9,3 +9,21 @@
   right: 1rem;
   cursor: pointer;
 }
+
+@media screen and (min-width: 768px) {
+  .article__remove-button {
+    top: .5rem;
+    right: .5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .article__remove-button {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .article__remove-button:hover {
+    background-image: url("../../../images/remove-button_active.svg");
+  }
+}

@@ -2,6 +2,8 @@
 @import url('../../inputs/inputs.css');
 @import url('../__button/popup-auth__button.css');
 @import url('../__subtitle/popup-auth__subtitle.css');
+@import url('../__close/popup-auth__close.css');
+
 
 .popup-auth__background {
   position: relative;
@@ -11,6 +13,8 @@
   border-top-left-radius: 16px;
   height: 100vh;
   margin-top: -20px;
+  padding-left: 26px;
+  padding-right: 36px;
 }
 
 @media screen and (min-width: 768px) {

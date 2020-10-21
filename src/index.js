@@ -13,6 +13,7 @@ const popup = document.querySelector('.popup');
 const authButton = document.querySelector('.popup__button');
 const popupAuth = document.querySelector('.popup-auth');
 const headerAuthButton = document.querySelector('.header__button');
+const closeAuthPopupBitton = document.querySelector('.popup-auth__close');
 
 const scrollY = document.body.style.top;
 document.body.style.position = '';
@@ -43,5 +44,9 @@ authButton.addEventListener('click', () => {
 });
 
 headerAuthButton.addEventListener('click', () => {
+  popupAuth.classList.toggle('popup_is-opened');
+})
+
+closeAuthPopupBitton.addEventListener('click', () => {
   popupAuth.classList.toggle('popup_is-opened');
 })

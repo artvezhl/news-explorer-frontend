@@ -1,0 +1,21 @@
+@import url('../__title/search-results__title.css');
+@import url('../__articles/search-results__articles.css');
+@import url('../__button/search-results__button.css');
+
+.search-results__ready {
+  display: none;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .search-results__ready {
+    margin-top: 2.6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-results__ready {
+    margin-top: 5rem;
+  }
+}

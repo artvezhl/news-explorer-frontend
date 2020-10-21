@@ -6,3 +6,9 @@
   margin: .5rem 0;
   padding: 0 1rem;
 }
+
+@media screen and (min-width: 1024px) {
+  .article__date {
+    padding: 0 1.5rem;
+  }
+}

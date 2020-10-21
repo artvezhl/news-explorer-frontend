@@ -4,11 +4,19 @@
 .footer {
   display: flex;
   flex-direction: column;
+  min-height: 64px;
 }
 
 @media screen and (min-width: 768px) {
   .footer {
     flex-direction: row-reverse;
     justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer {
+    min-height: 80px;
   }
 }

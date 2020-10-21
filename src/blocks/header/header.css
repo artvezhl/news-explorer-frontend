@@ -28,3 +28,9 @@
     padding: 0;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .header {
+    width: calc(100% - 12.75rem);
+  }
+}

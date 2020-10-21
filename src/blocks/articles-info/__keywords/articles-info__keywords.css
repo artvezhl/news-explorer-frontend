@@ -7,3 +7,16 @@
 .articles-info__keywords_weight_bold {
   font-weight: 700;
 }
+
+@media screen and (min-width: 768px) {
+  .articles-info__keywords {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .articles-info__keywords {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+}

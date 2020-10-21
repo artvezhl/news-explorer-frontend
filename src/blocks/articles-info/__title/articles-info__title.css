@@ -5,3 +5,18 @@
   line-height: 34px;
   margin: 16px 0;
 }
+
+@media screen and (min-width: 768px) {
+  .articles-info__title {
+    max-width: 336px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .articles-info__title {
+    font-size: 40px;
+    line-height: 46px;
+    margin: 28px 0;
+    max-width: 530px;
+  }
+}

@@ -1,0 +1,6 @@
+.popup-auth__close {
+  position: relative;
+  top: -390px;
+  right: -390px;
+  cursor: pointer;
+}

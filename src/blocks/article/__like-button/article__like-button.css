@@ -22,7 +22,14 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .article__like-button {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
   .article__like-button:hover {
     background-image: url("../../../images/like_hover.svg");
+  }
+  .article__like-button:active {
+    background-image: url("../../../images/like_marked.svg");
   }
 }
