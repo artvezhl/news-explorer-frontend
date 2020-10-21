@@ -30,7 +30,7 @@
 
 @media screen and (min-width: 1024px) {
   .cover {
-    background-image: url('../../images/background.jpg');
+    background-image: url('../../images/background.png');
     min-height: 576px;
   }
 }
