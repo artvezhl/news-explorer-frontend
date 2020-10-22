@@ -1,5 +1,5 @@
 .search-results__empty-title {
-  font-family: "Roboto Slab";
+  font-family: var(--roboto-slab);
   font-weight: normal;
   font-size: 26px;
   line-height: 30px;

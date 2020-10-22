@@ -1,5 +1,5 @@
 .article__source {
-  font-family: "Roboto Slab";
+  font-family: var(--roboto-slab);
   font-size: 1rem;
   line-height: 1.25em;
   color: #B6BCBF;

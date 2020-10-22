@@ -1,5 +1,5 @@
 .articles-info__keywords {
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 18px;
   line-height: 24px;
 }

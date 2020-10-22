@@ -1,6 +1,6 @@
 .footer__page-link {
   text-decoration: none;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-weight: normal;
   color: #1A1B22;
   font-size: 1.125rem;

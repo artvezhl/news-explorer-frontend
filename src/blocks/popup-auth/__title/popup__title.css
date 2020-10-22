@@ -1,6 +1,6 @@
 .popup-auth__title {
   padding-top: 16px;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 24px;
   line-height: 28px;
   font-weight: 900;

@@ -1,6 +1,6 @@
 .popup-auth__reg-link {
   color: #2F71E5;
-  font-family: Inter;
+  font-family: var(--inter);
   font-size: 14px;
   line-height: 17px;
   text-decoration: none;

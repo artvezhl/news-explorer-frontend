@@ -18,3 +18,13 @@
     height: 58px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .cover__button:hover {
+    background-color: #347EFF;
+  }
+
+  .cover__button:active {
+    background-color: #2A65CC;
+  }
+}

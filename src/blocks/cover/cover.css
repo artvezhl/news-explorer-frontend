@@ -4,9 +4,10 @@
 @import url('./__search-block/cover__search-block.css');
 @import url('./__input/cover__input.css');
 @import url('./__button/cover__button.css');
+@import url('./__background/cover__background.css');
 
 .cover {
-  background-image: url('../../images/background-mini.png');
+  /*background-image: url('../../images/background-mini.png');*/
   width: 100%;
   color: white;
   background-size: cover;
@@ -17,12 +18,12 @@
   justify-content: center;
   margin-top: -1rem;
   min-height: 536px;
-  padding-bottom: 3rem;
+  position: relative;
 }
 
 @media screen and (min-width: 768px) {
   .cover {
-    background-image: url('../../images/background-mid.png');
+    /*background-image: url('../../images/background-mid.png');*/
     max-height: 400px;
     min-height: 400px;
   }
@@ -30,7 +31,7 @@
 
 @media screen and (min-width: 1024px) {
   .cover {
-    background-image: url('../../images/background.png');
+    /*background-image: url('../../images/background.png');*/
     min-height: 576px;
   }
 }

@@ -19,10 +19,12 @@
           <ul class="header__menu-list">
             <li class="header__main-page header__main-page_active"><a href="index.html" class="header__link">Главная</a></li>
             <li class="header__saved-page"><a href="index.html" class="header__link">Сохраненные статьи</a></li>
-            <li class="header__auth"><button class="header__button button header__button_type_login header__button_active">Авторизоваться</button></li>
+            <li class="header__auth">
+              <button class="header__button button header__button_type_login header__button_active">Авторизоваться</button>
+            </li>
             <li class="header__auth">
               <button class="header__button header__button_type_logout button">
-                <p class="header__auth-name">Грета</p>
+                <span class="header__auth-name">Грета</span>
                 <img src="<%= require('./images/logout-white.svg') %>" alt="logout icon" class="header__logout-icon">
               </button>
             </li>
@@ -31,13 +33,18 @@
         <button class="header__mobile-menu header__mobile-menu_type_closed"></button>
       </header>
       <section class="cover">
+        <picture class="cover__background">
+          <source media="(min-width: 1024px)" srcset="./images/background.png">
+          <source media="(min-width: 768px)" srcset="./images/background-mid.png" sizes="100vw">
+          <img class="cover__image" src="./images/background-mini.png" alt="заставка мобильного телефона в руке" sizes="100vw">
+        </picture>
         <div class="cover__main-block slim-block">
           <h1 class="cover__title">Что творится в мире?</h1>
           <p class="cover__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         </div>
         <div class="cover__search-block">
           <input type="text" class="cover__input" placeholder="Введите тему новости">
-          <button class="cover__button button">Искать</button>
+          <input type="submit" class="cover__button button" value="Искать">
         </div>
       </section>
       <section class="search-results slim-block">
@@ -133,10 +140,10 @@
         <h2 class="popup-auth__title">Вход</h2>
         <div class="popup-auth__inputs inputs">
           <p class="inputs__name">Email</p>
-          <input type="email" class="inputs__item" placeholder="Введите почту">
+          <input type="email" class="inputs__item" required placeholder="Введите почту">
           <span class="error-message error-message__hidden">Неправильный формат email</span>
           <p class="inputs__name">Пароль</p>
-          <input type="password" class="inputs__item" placeholder="Введите пароль">
+          <input type="password" class="inputs__item" required placeholder="Введите пароль">
           <span class="error-message error-message__hidden"></span>
         </div>
         <button class="popup-auth__button button popup-auth__button_active">Войти</button>

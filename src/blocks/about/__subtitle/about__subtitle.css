@@ -1,5 +1,5 @@
 .about__subtitle {
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-weight: normal;
   font-size: 1.125rem;
   line-height: 1.3em;

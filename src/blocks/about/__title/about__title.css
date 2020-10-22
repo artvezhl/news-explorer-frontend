@@ -1,5 +1,5 @@
 .about__title {
-  font-family: "Roboto Slab";
+  font-family: var(--roboto-slab);
   font-size: 1.875rem;
   line-height: 1.3em;
   font-weight: normal;

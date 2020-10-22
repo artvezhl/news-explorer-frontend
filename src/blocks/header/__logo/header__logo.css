@@ -1,5 +1,5 @@
 .header__logo {
-  font-family: 'Roboto Slab';
+  font-family: var(--roboto-slab);
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5rem;

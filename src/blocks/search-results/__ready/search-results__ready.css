@@ -3,7 +3,7 @@
 @import url('../__button/search-results__button.css');
 
 .search-results__ready {
-  display: none;
+  display: flex;
   flex-direction: column;
   margin-top: 2rem;
 }

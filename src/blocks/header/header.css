@@ -16,6 +16,7 @@
   justify-content: space-between;
   padding: 1rem;
   border-bottom: 1px solid rgba(196,196,196,.2);
+  z-index: 50;
 }
 
 .header_type_popup-opened {

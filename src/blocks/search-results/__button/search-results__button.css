@@ -4,7 +4,7 @@
   background-color: white;
   border: none;
   border-radius: 80px;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 1.125rem;
   line-height: 1.3em;
   cursor: pointer;
@@ -29,5 +29,10 @@
     margin-bottom: 80px;
     min-height: 64px;
     min-width: 288px;
+  }
+
+  .search-results__button:hover {
+    background-color: #E5E5E5;
+    opacity: 0.9;
   }
 }

@@ -8,25 +8,25 @@
 
 ::-moz-placeholder {
   color: #B6BCBF;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 1rem;
 }
 
 ::-webkit-input-placeholder {
   color: #B6BCBF;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 1rem;
 }
 
 :-moz-placeholder {
   color: #B6BCBF;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 1rem;
 }
 
 :-ms-input-placeholder {
   color: #B6BCBF;
-  font-family: Roboto;
+  font-family: var(--roboto);
   font-size: 1rem;
 }
 

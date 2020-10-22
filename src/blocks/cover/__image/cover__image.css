@@ -1,0 +1,11 @@
+@media screen and (max-width: 1023px) {
+  .cover__image {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .cover__image {
+    width: 100%;
+  }
+}

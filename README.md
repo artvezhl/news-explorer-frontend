@@ -29,5 +29,4 @@ Frontend for News-Explorer Diploma project
 - Установить зависимости при помощи npm - `npm i`
 - Запустить в development режиме - `npm run dev`
 - Запустить сборку production-билда - `npm run build`
-- Запустить сборку production - `npm run start`
 - Разместить production-билд на github pages - `npm run deploy`

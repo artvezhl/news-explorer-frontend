@@ -7,4 +7,8 @@
   margin: 0 auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --roboto-slab: 'Roboto Slab', 'Times New Roman', Times, serif;
+  --roboto: Roboto, Arial, Helvetica, sans-serif;
+  --source-sans-pro: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+  --inter: Inter, Arial, Helvetica, sans-serif;
 }
