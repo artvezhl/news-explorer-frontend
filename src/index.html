@@ -34,9 +34,9 @@
       </header>
       <section class="cover">
         <picture class="cover__background">
-          <source media="(min-width: 1024px)" srcset="./images/background.png">
-          <source media="(min-width: 768px)" srcset="./images/background-mid.png" sizes="100vw">
-          <img class="cover__image" src="./images/background-mini.png" alt="заставка мобильного телефона в руке" sizes="100vw">
+          <source media="(min-width: 1024px)" srcset="<%= require('./images/background.png') %>">
+          <source media="(min-width: 768px)" srcset="<%= require('./images/background-mid.png') %>" sizes="100vw">
+          <img class="cover__image" src="<%= require('./images/background-mini.png') %>" alt="заставка мобильного телефона в руке" sizes="100vw">
         </picture>
         <div class="cover__main-block slim-block">
           <h1 class="cover__title">Что творится в мире?</h1>
