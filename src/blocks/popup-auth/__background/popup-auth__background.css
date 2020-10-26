@@ -4,8 +4,6 @@
 @import url('../__subtitle/popup-auth__subtitle.css');
 @import url('../__close/popup-auth__close.css');
 @import url('../../error-message/error-message.css');
-@import url('../../error-message/__hidden/error-message__hidden.css');
-
 
 .popup-auth__background {
   position: relative;
@@ -15,14 +13,15 @@
   border-top-left-radius: 16px;
   height: 100vh;
   margin-top: -20px;
-  padding-left: 26px;
-  padding-right: 36px;
+  padding: 34px 36px 28px;
+  /*padding-left: 26px;*/
+  /*padding-right: 36px;*/
 }
 
 @media screen and (min-width: 768px) {
   .popup-auth__background {
-    width: 350px;
-    height: 380px;
+    width: 358px;
+    height: 318px;
     border-radius: 16px;
     margin: 200px auto 0;
   }

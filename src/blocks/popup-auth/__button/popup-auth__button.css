@@ -1,4 +1,10 @@
 .popup-auth__button {
-  margin-top: 20px;
-  color: #B6BCBF;
+  background-color: #2F71E5;
+  color: white;
+  margin-top: 50px;
+}
+
+.popup-auth__button:disabled {
+  background-color: #B6BCBF;
+  height: 64px;
 }

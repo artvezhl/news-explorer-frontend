@@ -8,6 +8,7 @@
 
 @media screen and (min-width: 768px) {
   .inputs__name {
-    margin-top: 12px;
+    margin-top: 0;
+    margin-bottom: 8px;
   }
 }
