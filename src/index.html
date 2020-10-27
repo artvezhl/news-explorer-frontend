@@ -41,7 +41,7 @@
           <p class="cover__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
         </div>
         <div class="cover__search-block">
-          <input type="text" class="cover__input" placeholder="Введите тему новости">
+          <input type="text" class="cover__input" required placeholder="Введите тему новости">
           <input type="submit" class="cover__button button" value="Искать">
         </div>
       </section>
@@ -120,35 +120,79 @@
       </section>
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
     </footer>
-    <section class="popup">
-      <div class="popup__background slim-block">
-        <header class="header header_type_popup-closed">
-          <a href="index.html" class="header__logo">NewsExplorer</a>
-          <button class="popup__mobile-menu header__mobile-menu_type_opened"></button>
-        </header>
-        <div class="popup__links">
-          <a href="index.html" class="popup__link">Главная</a>
-          <a href="articles.html" class="popup__link">Сохранённые статьи</a>
+    <section class="popup-container popup"></section>
+    <template id="auth-popup" style="display: none;">
+        <div class="popup__background">
+          <h2 class="popup__title">Вход</h2>
+          <form novalidate class="popup__inputs inputs" name="auth">
+            <div class="inputs__container">
+              <p class="inputs__name">Email</p>
+              <input id="email" type="email" name="email" required
+                     pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                     class="inputs__item" placeholder="Введите почту"
+              >
+              <span id="error-email" class="error-message error-message__hidden"></span>
+            </div>
+            <div class="inputs__container">
+              <p class="inputs__name">Пароль</p>
+              <input id="password" type="password" name="password" required class="inputs__item" placeholder="Введите пароль">
+              <span id="error-pass" class="error-message error-message__hidden"></span>
+            </div>
+            <button type="submit" class="popup__button button">Войти</button>
+          </form>
+          <p class="popup__subtitle">или <span class="popup__reg-link">Зарегистрироваться</span></p>
+          <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
         </div>
-        <button class="popup__button button">Авторизоваться</button>
+    </template>
+    <template id="reg-popup" style="display: none;">
+      <div class="popup__background">
+        <h2 class="popup__title">Регистрация</h2>
+        <form novalidate class="popup__inputs inputs" name="reg">
+          <div class="inputs__container">
+            <p class="inputs__name">Email</p>
+            <input id="reg-email" type="email" name="email" required
+                   pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                   class="inputs__item" placeholder="Введите почту"
+            >
+            <span id="reg-error-email" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="inputs__container">
+            <p class="inputs__name">Пароль</p>
+            <input id="reg-password" type="password" name="password" required class="inputs__item" placeholder="Введите пароль">
+            <span id="reg-error-pass" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="inputs__container">
+            <p class="inputs__name">Имя</p>
+            <input id="name" type="text" name="name" required class="inputs__item" placeholder="Введите своё имя">
+            <span id="reg-name" class="error-message error-message__hidden"></span>
+          </div>
+          <button type="submit" class="popup__button button">Зарегистрироваться</button>
+        </form>
+        <p class="popup__subtitle">или <span class="popup__reg-link">Войти</span></p>
+        <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
       </div>
-    </section>
-    <section class="popup-auth">
-      <div class="popup-auth__background">
-        <h2 class="popup-auth__title">Вход</h2>
-        <div class="popup-auth__inputs inputs">
-          <p class="inputs__name">Email</p>
-          <input type="email" class="inputs__item" required placeholder="Введите почту">
-          <span class="error-message error-message__hidden">Неправильный формат email</span>
-          <p class="inputs__name">Пароль</p>
-          <input type="password" class="inputs__item" required placeholder="Введите пароль">
-          <span class="error-message error-message__hidden"></span>
-        </div>
-        <button class="popup-auth__button button popup-auth__button_active">Войти</button>
-        <p class="popup-auth__subtitle">или <a href="" class="popup-auth__reg-link">Зарегистрироваться</a></p>
-        <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup-auth__close">
+    </template>
+    <template id="success-popup" style="display: none;">
+      <div class="popup__background">
+        <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
+        <p class="popup__subtitle"><span class="popup__reg-link">Войти</span></p>
+        <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
       </div>
-    </section>
+    </template>
+
+<!--    <section class="popup-mobile">-->
+<!--      <div class="popup-mobile__background slim-block">-->
+<!--        <header class="header header_type_popup-closed">-->
+<!--          <a href="index.html" class="header__logo">NewsExplorer</a>-->
+<!--          <button class="popup-mobile__menu header__mobile-menu_type_opened"></button>-->
+<!--        </header>-->
+<!--        <div class="popup-mobile__links">-->
+<!--          <a href="index.html" class="popup-mobile__link">Главная</a>-->
+<!--          <a href="articles.html" class="popup-mobile__link">Сохранённые статьи</a>-->
+<!--        </div>-->
+<!--        <button class="popup-mobile__button button">Авторизоваться</button>-->
+<!--      </div>-->
+<!--    </section>-->
   </div>
   <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>

@@ -1,11 +1,12 @@
-.popup-auth__reg-link {
+.popup__reg-link {
   color: #2F71E5;
   font-family: var(--inter);
   font-size: 14px;
   line-height: 17px;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.popup-auth__reg-link:hover {
+.popup__reg-link:hover {
   text-decoration: underline;
 }

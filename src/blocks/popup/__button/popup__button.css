@@ -1,6 +1,10 @@
 .popup__button {
-  margin: 1.35rem 0;
-  background-color: transparent;
+  background-color: #2F71E5;
   color: white;
-  border: 1px solid white;
+  width: 360px;
+  height: 64px;
+}
+
+.popup__button:disabled {
+  background-color: #E6E8EB;
 }

@@ -4,7 +4,7 @@ import "../styles/articles.css";
 const header = document.querySelector('.header');
 const menuButton = document.querySelector('.header__mobile-menu');
 const closeButton = document.querySelector('.popup__mobile-menu');
-const popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup-mobile');
 
 menuButton.addEventListener('click', (event) => {
   header.classList.toggle('header_type_popup-opened');

@@ -1,6 +1,6 @@
-@import url('../__reg-link/popup-auth__reg-link.css');
+@import url('../__reg-link/popup__reg-link.css');
 
-.popup-auth__subtitle {
+.popup__subtitle {
   text-align: center;
   font-family: var(--inter);
   font-size: 14px;
