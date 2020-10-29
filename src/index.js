@@ -5,25 +5,38 @@ import "./vendor/normalize.css";
 import "./styles/index.css";
 
 // импорт переменных
-import { popupContainer, headerAuthButton } from './scripts/constants';
+import { popupContainer, headerAuthButton, apiConfig } from './scripts/constants';
 
-// импорт класса валидатора
+// импорт классов
+import { Api } from './scripts/Api';
 import { FormValidator } from "./scripts/FormValidator";
+import { SuccessPopup } from "./scripts/SuccessPopup";
+import { RegPopup } from './scripts/RegPopup';
+import { AuthPopup } from './scripts/AuthPopup';
+
+// создание экземпляра класса Api
+const api = new Api(apiConfig);
+
+// создание экземпляра класса валидатора
 const formValidator = (...arg) => new FormValidator(...arg);
 
-// импорт класс попапа регистрации
-import { RegPopup } from './scripts/RegPopup';
-const regPopup = (...arg) => new RegPopup(...arg);
+// выделение метода открытия попапа успешной регистрации
+const successPopupOpen = new SuccessPopup(popupContainer).open;
 
-// импорт класс попапа авторизации
-import { AuthPopup } from './scripts/AuthPopup';
-const authPopup = (...arg) => new AuthPopup(...arg);
-const authPopupOpen = authPopup(popupContainer, formValidator, regPopup(popupContainer, formValidator).open).open;
+// создание экземпляра класса попапа регистрации
+let regPopup = (...arg) => new RegPopup(...arg);
 
-const registrationPopup = regPopup(popupContainer, formValidator, authPopupOpen);
+// создание экземпляра класса попапа авторизации
+const authPopup = new AuthPopup(popupContainer, formValidator, regPopup(popupContainer, formValidator).open);
+
+// дополнение класса попапа регистрации
+regPopup(popupContainer, formValidator, authPopup.open, api, successPopupOpen);
+
+// создание экземпляра класса попапа успешной регистрации
+const successPopup = new SuccessPopup(popupContainer, authPopup.open);
 
 // слушатели событий
-headerAuthButton.addEventListener('click', authPopupOpen);
+headerAuthButton.addEventListener('click', authPopup.open);
 
 // TODO remove code below
 // const header = document.querySelector('.header');

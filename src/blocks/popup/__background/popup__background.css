@@ -4,6 +4,7 @@
 @import url('../__subtitle/popup__subtitle.css');
 @import url('../__close/popup__close.css');
 @import url('../../error-message/error-message.css');
+@import url('../__subtitle/_place/_success-popup/popup__subtitle_place_success-popup.css');
 
 .popup__background {
   position: relative;

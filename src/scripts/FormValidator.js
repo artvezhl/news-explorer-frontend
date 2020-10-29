@@ -31,4 +31,11 @@ export class FormValidator {
       this.setSubmitButtonState();
     });
   }
+
+  removeEventListeners = () => {
+    this._form.removeEventListener('input', (event) => {
+      this.checkInputValidity(event);
+      this.setSubmitButtonState();
+    });
+  }
 }
