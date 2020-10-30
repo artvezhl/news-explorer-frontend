@@ -4,9 +4,9 @@ const headerAuthButton = document.querySelector('.header__button');
 
 // server url
 const apiConfig = {
-  baseUrl: 'https://localhost:3000/',
+  baseUrl: 'http://localhost:3000',
   headers: {
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
   }
 }
 

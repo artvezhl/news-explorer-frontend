@@ -1,6 +1,8 @@
-@import url(__hidden/error-message__hidden.css);
+@import url('__hidden/error-message__hidden.css');
+@import url('__signup-err/error-message__signup-err.css');
 
 .error-message {
+  font-family: var(--inter);
   color: #FF0000;
   font-size: 12px;
   line-height: 15px;

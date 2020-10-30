@@ -158,7 +158,7 @@
           </div>
           <div class="inputs__container">
             <p class="inputs__name">Пароль</p>
-            <input id="reg-password" type="password" name="password" required class="inputs__item" placeholder="Введите пароль">
+            <input id="reg-password" type="password" name="password" minlength="8" required class="inputs__item" placeholder="Введите пароль">
             <span id="reg-error-pass" class="error-message error-message__hidden"></span>
           </div>
           <div class="inputs__container">
@@ -166,6 +166,7 @@
             <input id="name" type="text" name="name" required class="inputs__item" placeholder="Введите своё имя">
             <span id="reg-name" class="error-message error-message__hidden"></span>
           </div>
+          <span id="signup-error" class="error-message error-message__signup-err error-message__hidden"></span>
           <button type="submit" class="popup__button button">Зарегистрироваться</button>
         </form>
         <p class="popup__subtitle">или <span class="popup__reg-link">Войти</span></p>

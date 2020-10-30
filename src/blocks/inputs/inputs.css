@@ -2,6 +2,6 @@
 @import url('./__item/inputs__item.css');
 @import url('./__container/inputs__container.css');
 
-.inputs {
-
+.inputs:last-child {
+  margin-bottom: 10px;
 }

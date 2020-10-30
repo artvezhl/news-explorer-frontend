@@ -11,9 +11,9 @@ export class FormValidator {
     if (input.validity.valueMissing) {
       input.setCustomValidity('Это обязательное поле');
     }
-    // if (input.validity.tooShort || input.validity.tooLong) {
-    //   input.setCustomValidity('Должно быть от 2 до 30 символов');
-    // }
+    if (input.validity.tooShort) {
+      input.setCustomValidity('Пароль должен быть не менее 8 символов');
+    }
     if (input.validity.typeMismatch) {
       input.setCustomValidity('Неправильный формат email');
     }

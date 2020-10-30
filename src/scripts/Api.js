@@ -6,25 +6,31 @@ export class Api {
 
   // метод проверки ответа сервера и преобразование из json
   _getResponseData(res) {
-    if (!res.ok) {
-      return Promise.reject(`Ошибка: ${res.status}`);
+    if (res.ok) {
+      return res.json();
     }
-    return res.json();
+    const json = res.json();
+    return json.then(Promise.reject.bind(Promise))
   }
 
-  // регистрация пользователя
-  regUser(email, password, name) {
+// регистрация пользователя
+  signUp = (email, password, name) => {
     return fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: this._headers,
+      credentials: 'include',
       body: JSON.stringify({
         email: email,
         password: password,
         name: name
-      })
+      }),
     })
       .then(res => this._getResponseData(res));
   }
+
+
+
+
 
   // запрос стартовых карточек с сервера
   // getInitialCards() {

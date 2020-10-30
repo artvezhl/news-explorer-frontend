@@ -3,6 +3,7 @@
   color: white;
   width: 360px;
   height: 64px;
+  margin-top: 16px;
 }
 
 .popup__button:disabled {

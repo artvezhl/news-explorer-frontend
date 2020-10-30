@@ -3,10 +3,10 @@ import { Popup } from './Popup';
 export class AuthPopup extends Popup {
   static _template = document.querySelector('#auth-popup').content;
 
-  constructor(popupContainer, formValidator, regPopupOpen) {
-    super(popupContainer);
+  constructor({ container, validator, regPopupOpen }) {
+    super(container);
     this._popupContent = AuthPopup._template.cloneNode(true).children[0];
-    this._formValidator = formValidator;
+    this._formValidator = validator;
     this._regPopupOpen = regPopupOpen;
     this.open = this.open.bind(this);
     // this._api = api;
@@ -17,13 +17,13 @@ export class AuthPopup extends Popup {
     this._container.appendChild(this._popupContent);
     this.form = document.forms.auth;
     this._setEventListeners();
-    // this.form.addEventListener('submit', this._handleAuthSubmit);
     this.form.querySelector('.button').setAttribute('disabled', 'true');
   }
 
   _setEventListeners = () => {
-    this._formValidator(this.form).setEventListeners();
     this._popupContent.querySelector('.popup__close').addEventListener('click', this.close);
+    this._formValidator(this.form).setEventListeners();
+    // this.form.addEventListener('submit', this._handleAuthSubmit);
     this._regLink = this._popupContent.querySelector('.popup__reg-link');
     this._regLink.addEventListener('click', this.close);
     this._regLink.addEventListener('click', this._regPopupOpen);
