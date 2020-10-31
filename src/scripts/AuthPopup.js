@@ -3,13 +3,13 @@ import { Popup } from './Popup';
 export class AuthPopup extends Popup {
   static _template = document.querySelector('#auth-popup').content;
 
-  constructor({ container, validator, regPopupOpen }) {
+  constructor({ container, validator, regPopupOpen, api }) {
     super(container);
     this._popupContent = AuthPopup._template.cloneNode(true).children[0];
     this._formValidator = validator;
     this._regPopupOpen = regPopupOpen;
+    this._api = api;
     this.open = this.open.bind(this);
-    // this._api = api;
   }
 
   open = () => {
@@ -23,7 +23,7 @@ export class AuthPopup extends Popup {
   _setEventListeners = () => {
     this._popupContent.querySelector('.popup__close').addEventListener('click', this.close);
     this._formValidator(this.form).setEventListeners();
-    // this.form.addEventListener('submit', this._handleAuthSubmit);
+    this.form.addEventListener('submit', this._handleAuthSubmit);
     this._regLink = this._popupContent.querySelector('.popup__reg-link');
     this._regLink.addEventListener('click', this.close);
     this._regLink.addEventListener('click', this._regPopupOpen);
@@ -35,19 +35,16 @@ export class AuthPopup extends Popup {
     this._regLink.removeEventListener('click', this.close);
   }
 
-  // _handleAuthSubmit = (event) => {
-  //   event.preventDefault();
-  //   const button = document.querySelector('.popup-mobile-auth__button');
-  //   buttonText.textContent = 'Загрузка...';
-  //   this._api.addNewCard(this.form.name.value, this.form.link.value)
-  //     .then((obj) => {
-  //       this.cardlist.addNewCard(obj);
-  //       buttonText.textContent = '+';
-  //       this._resetForm();
-  //       this.close();
-  //     })
-  //     .catch(err => console.log(err));
-  // }
+  _handleAuthSubmit = async (event) => {
+    event.preventDefault();
+    this._api.signIn(this.form.email.value, this.form.password.value)
+      .then((data) => {
+        localStorage.setItem('token', data.token);
+        this._resetForm();
+        this.close();
+      })
+      .catch(err => console.log(err));
+  }
 
   close = () => {
     super.close();

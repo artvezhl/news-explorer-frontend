@@ -1,11 +1,11 @@
 import { Popup } from "./Popup";
 // TODO разобраться почему не работает ссылка на попап авторизации
-export class RegPopup extends Popup {
+export class SignupPopup extends Popup {
   static _template = document.querySelector('#reg-popup').content;
 
   constructor({ container, validator, authPopupOpen, api, successPopupOpen }) {
     super(container);
-    this._popupContent = RegPopup._template.cloneNode(true).children[0];
+    this._popupContent = SignupPopup._template.cloneNode(true).children[0];
     this._formValidator = validator;
     this._authPopupOpen = authPopupOpen;
     this._api = api;
@@ -38,7 +38,7 @@ export class RegPopup extends Popup {
   _handleAuthSubmit = (event) => {
     event.preventDefault();
     this._api.signUp(this.form.email.value, this.form.password.value, this.form.name.value)
-      .then((obj) => {
+      .then(() => {
         this._resetForm();
         this.close();
         this._successPopupOpen();

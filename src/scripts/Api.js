@@ -14,8 +14,8 @@ export class Api {
   }
 
 // регистрация пользователя
-  signUp = (email, password, name) => {
-    return fetch(`${this._url}/signup`, {
+  signUp = async (email, password, name) => {
+    const result = await fetch(`${this._url}/signup`, {
       method: 'POST',
       headers: this._headers,
       credentials: 'include',
@@ -25,14 +25,40 @@ export class Api {
         name: name
       }),
     })
-      .then(res => this._getResponseData(res));
+    return this._getResponseData(result);
   }
 
+// авторизация
+  signIn = async (email, password) => {
+    const result = await fetch(`${this._url}/signin`, {
+      method: 'POST',
+      headers: this._headers,
+      credentials: 'include',
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+    return result;
+  }
 
+  // signIn = (email, password) => {
+  //   fetch(`${this._url}/signin`, {
+  //     method: 'POST',
+  //     headers: this._headers,
+  //     credentials: 'include',
+  //     body: JSON.stringify({
+  //       email: email,
+  //       password: password,
+  //     })
+  //   })
+  //     .then((data) => {
+  //       localStorage.setItem('token', data.token);
+  //     })
+  //     .catch(err => console.log(err));
+  // }
 
-
-
-  // запрос стартовых карточек с сервера
+// запрос стартовых карточек с сервера
   // getInitialCards() {
   //   return fetch(`${this._url}/cards`, {
   //     headers: this._headers

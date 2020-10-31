@@ -10,7 +10,7 @@ import { popupContainer, headerAuthButton, apiConfig } from './scripts/constants
 import { Api } from './scripts/Api';
 import { FormValidator } from "./scripts/FormValidator";
 import { SuccessPopup } from "./scripts/SuccessPopup";
-import { RegPopup } from './scripts/RegPopup';
+import { SignupPopup } from './scripts/SignupPopup';
 import { AuthPopup } from './scripts/AuthPopup';
 
 // переменные для передачи в конструкторы классов
@@ -31,6 +31,7 @@ const successPopupArgs = {
 const api = new Api(apiConfig);
 // добавление API в конструкторы классов
 regPopupArgs.api = api;
+authPopupArgs.api = api;
 
 // создание экземпляра класса валидатора
 const formValidator = (...arg) => new FormValidator(...arg);
@@ -44,7 +45,7 @@ const successPopup = new SuccessPopup(successPopupArgs);
 regPopupArgs.successPopupOpen = successPopup.open;
 
 // создание экземпляра класса попапа регистрации
-const regPopup = new RegPopup(regPopupArgs);
+const regPopup = new SignupPopup(regPopupArgs);
 authPopupArgs.regPopupOpen = regPopup.open;
 
 // создание экземпляра класса попапа авторизации
