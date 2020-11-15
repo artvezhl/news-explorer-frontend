@@ -1,5 +1,5 @@
-@import url('../__reg-link/popup__reg-link.css');
-@import url('../__reg-link/_place/_success-popup/popup__reg-link_place_success-popup.css');
+@import url('../__link/popup__link.css');
+@import url('../__link/_place/_success-popup/popup__link_place_success-popup.css');
 
 .popup__subtitle {
   text-align: center;

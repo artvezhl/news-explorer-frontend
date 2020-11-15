@@ -1,4 +1,4 @@
-export class Api {
+export class MainApi {
   constructor(options) {
     this._url = options.baseUrl;
     this._headers = options.headers;
@@ -7,6 +7,8 @@ export class Api {
   // метод проверки ответа сервера и преобразование из json
   _getResponseData(res) {
     if (res.ok) {
+      // res.json()
+      //   .then(data => console.log(data));
       return res.json();
     }
     const json = res.json();
@@ -40,6 +42,15 @@ export class Api {
       }),
     });
     return result;
+  }
+
+  getUserInfo = async () => {
+    const result = await fetch(`${this._url}/users/me`, {
+      method: 'GET',
+      headers: this._headers,
+      credentials: 'include',
+    });
+    return this._getResponseData(result);
   }
 
   // signIn = (email, password) => {

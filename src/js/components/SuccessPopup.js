@@ -1,4 +1,4 @@
-import {Popup} from "./Popup";
+import Popup from "./Popup";
 // TODO разобраться почему не работает ссылка на попап авторизации
 export class SuccessPopup extends Popup {
   static _template = document.querySelector('#success-popup').content;

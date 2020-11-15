@@ -1,4 +1,4 @@
-.popup__reg-link {
+.popup__link {
   color: #2F71E5;
   font-family: var(--inter);
   font-size: 14px;
@@ -7,6 +7,6 @@
   cursor: pointer;
 }
 
-.popup__reg-link:hover {
+.popup__link:hover {
   text-decoration: underline;
 }

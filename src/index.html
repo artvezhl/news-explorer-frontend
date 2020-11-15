@@ -19,8 +19,6 @@
             <li class="header__saved-page"><a href="index.html" class="header__link">Сохраненные статьи</a></li>
             <li class="header__auth">
               <button class="header__button button header__button_type_login header__button_active">Авторизоваться</button>
-            </li>
-            <li class="header__auth">
               <button class="header__button header__button_type_logout button">
                 <span class="header__auth-name">Грета</span>
                 <img src="<%= require('./images/logout-white.svg') %>" alt="logout icon" class="header__logout-icon">
@@ -121,28 +119,29 @@
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
     </footer>
     <section class="popup-container popup"></section>
+
     <template id="auth-popup" style="display: none;">
-        <div class="popup__background">
-          <h2 class="popup__title">Вход</h2>
-          <form novalidate class="popup__inputs inputs" name="auth">
-            <div class="inputs__container">
-              <p class="inputs__name">Email</p>
-              <input id="email" type="email" name="email" required
-                     pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
-                     class="inputs__item" placeholder="Введите почту"
-              >
-              <span id="error-email" class="error-message error-message__hidden"></span>
-            </div>
-            <div class="inputs__container">
-              <p class="inputs__name">Пароль</p>
-              <input id="password" type="password" name="password" required minlength="8" class="inputs__item" placeholder="Введите пароль">
-              <span id="error-pass" class="error-message error-message__hidden"></span>
-            </div>
-            <button type="submit" class="popup__button button">Войти</button>
-          </form>
-          <p class="popup__subtitle">или <span class="popup__reg-link">Зарегистрироваться</span></p>
-          <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
-        </div>
+      <div class="popup__background">
+        <h2 class="popup__title">Вход</h2>
+        <form novalidate class="popup__inputs inputs" name="auth">
+          <div class="inputs__container">
+            <p class="inputs__name">Email</p>
+            <input id="email" type="email" name="email" required
+                   pattern="^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$"
+                   class="inputs__item" placeholder="Введите почту"
+            >
+            <span id="error-email" class="error-message error-message__hidden"></span>
+          </div>
+          <div class="inputs__container">
+            <p class="inputs__name">Пароль</p>
+            <input id="password" type="password" name="password" required minlength="8" class="inputs__item" placeholder="Введите пароль">
+            <span id="error-pass" class="error-message error-message__hidden"></span>
+          </div>
+          <button type="submit" class="popup__button button">Войти</button>
+        </form>
+        <p class="popup__subtitle">или <span class="popup__link popup__link_place_auth-popup">Зарегистрироваться</span></p>
+        <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
+      </div>
     </template>
     <template id="reg-popup" style="display: none;">
       <div class="popup__background">
@@ -169,7 +168,7 @@
           <span id="signup-error" class="error-message error-message__signup-err error-message__hidden"></span>
           <button type="submit" class="popup__button button">Зарегистрироваться</button>
         </form>
-        <p class="popup__subtitle">или <span class="popup__reg-link">Войти</span></p>
+        <p class="popup__subtitle">или <span class="popup__link">Войти</span></p>
         <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
       </div>
     </template>
@@ -177,7 +176,7 @@
       <div class="popup__background">
         <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
         <p class="popup__subtitle popup__subtitle_place_success-popup">
-          <span class="popup__reg-link popup__reg-link_place_success-popup">Войти</span>
+          <span class="popup__link popup__link_place_success-popup">Войти</span>
         </p>
         <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
       </div>

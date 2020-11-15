@@ -1,58 +1,74 @@
 // TODO доработать readme.md
+
 // import styles
 import "./vendor/normalize.css";
 import "./styles/index.css";
 
 // импорт переменных
-import { popupContainer, headerAuthButton, apiConfig } from './scripts/constants';
+import { popupContainer, headerAuthButton, apiConfig, popupLink } from './js/constants/constants';
 
 // импорт классов
-import { Api } from './scripts/Api';
-import { FormValidator } from "./scripts/FormValidator";
-import { SuccessPopup } from "./scripts/SuccessPopup";
-import { SignupPopup } from './scripts/SignupPopup';
-import { AuthPopup } from './scripts/AuthPopup';
+import { MainApi } from './js/api/MainApi';
+import { FormValidator } from "./js/components/FormValidator";
+import { SuccessPopup } from "./js/components/SuccessPopup";
+import SignupPopup from './js/components/SignupPopup';
+import AuthPopup from './js/components/AuthPopup';
+import { Header } from "./js/components/Header";
 
 // переменные для передачи в конструкторы классов
+// TODO возможно стоит создать класс обычного попапа?
 // параметры для попапа регистрации
-const regPopupArgs = {
+const signUpPopupArgs = {
   container: popupContainer,
+  formName: 'reg',
 }
 // параметры для попапа авторизации
-const authPopupArgs = {
+const signInPopupArgs = {
   container: popupContainer,
+  formName: 'auth',
 }
 // параметры для попапа успешной регистрации
 const successPopupArgs = {
   container: popupContainer,
 }
+// параметры для попапа хэдера
+const headerArgs = {}
+// параметры для общего попапа
 
-// создание экземпляра класса Api
-const api = new Api(apiConfig);
+// создание экземпляра класса MainApi
+const api = new MainApi(apiConfig);
 // добавление API в конструкторы классов
-regPopupArgs.api = api;
-authPopupArgs.api = api;
+signUpPopupArgs.api = api;
+signInPopupArgs.api = api;
+headerArgs.getUserInfo = api.getUserInfo;
+
+// создание экземпляра класса хэдера
+const header = new Header(headerArgs);
+// добавление методов в объекты конструкторов классов
+signInPopupArgs.renderHeader = header.authorizedHeader;
 
 // создание экземпляра класса валидатора
 const formValidator = (...arg) => new FormValidator(...arg);
 // добавление валидатора в объекты конструкторов классов
-regPopupArgs.validator = formValidator;
-authPopupArgs.validator = formValidator;
+signUpPopupArgs.validator = formValidator;
+signInPopupArgs.validator = formValidator;
 
 // выделение метода открытия попапа успешной регистрации
 const successPopup = new SuccessPopup(successPopupArgs);
 // добавление методов в объекты конструкторов классов
-regPopupArgs.successPopupOpen = successPopup.open;
+signUpPopupArgs.successPopupOpen = successPopup.open;
 
 // создание экземпляра класса попапа регистрации
-const regPopup = new SignupPopup(regPopupArgs);
-authPopupArgs.regPopupOpen = regPopup.open;
+const signUpPopup = new SignupPopup(signUpPopupArgs);
+signInPopupArgs.signUpPopupOpen = signUpPopup.open;
 
 // создание экземпляра класса попапа авторизации
-const authPopup = new AuthPopup(authPopupArgs);
+const authPopup = new AuthPopup(signInPopupArgs);
 // добавление методов в объекты конструкторов классов
-regPopupArgs.authPopupOpen = authPopup.open;
-successPopupArgs.authPopupOpen = authPopup.open;
+signUpPopupArgs.signInPopupOpen = authPopup.open;
+successPopupArgs.signInPopupOpen = authPopup.open;
 
 // слушатели событий
 headerAuthButton.addEventListener('click', authPopup.open);
+
+// signUpPopup.open();
