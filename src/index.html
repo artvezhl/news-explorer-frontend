@@ -118,9 +118,8 @@
       </section>
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
     </footer>
-    <section class="popup-container popup"></section>
 
-    <template id="auth-popup" style="display: none;">
+    <div class="popup" id="auth-popup">
       <div class="popup__background">
         <h2 class="popup__title">Вход</h2>
         <form novalidate class="popup__inputs inputs" name="auth">
@@ -142,8 +141,8 @@
         <p class="popup__subtitle">или <span class="popup__link popup__link_place_auth-popup">Зарегистрироваться</span></p>
         <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
       </div>
-    </template>
-    <template id="reg-popup" style="display: none;">
+    </div>
+    <div class="popup" id="reg-popup">
       <div class="popup__background">
         <h2 class="popup__title">Регистрация</h2>
         <form novalidate class="popup__inputs inputs" name="reg">
@@ -168,20 +167,19 @@
           <span id="signup-error" class="error-message error-message__signup-err error-message__hidden"></span>
           <button type="submit" class="popup__button button">Зарегистрироваться</button>
         </form>
-        <p class="popup__subtitle">или <span class="popup__link">Войти</span></p>
+        <p class="popup__subtitle">или <span class="popup__link popup__link_place_reg-popup">Войти</span></p>
         <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
       </div>
-    </template>
-    <template id="success-popup" style="display: none;">
-      <div class="popup__background">
-        <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
-        <p class="popup__subtitle popup__subtitle_place_success-popup">
-          <span class="popup__link popup__link_place_success-popup">Войти</span>
-        </p>
-        <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
+    </div>
+    <div class="popup" id="success-popup">
+        <div class="popup__background">
+          <h2 class="popup__title">Пользователь успешно зарегистрирован!</h2>
+          <p class="popup__subtitle popup__subtitle_place_success-popup">
+            <span class="popup__link popup__link_place_success-popup">Войти</span>
+          </p>
+          <img src="<%= require('./images/close.svg') %>" alt="Кнопка закрытия" class="popup__close">
+        </div>
       </div>
-    </template>
-
 <!--    <section class="popup-mobile">-->
 <!--      <div class="popup-mobile__background slim-block">-->
 <!--        <header class="header header_type_popup-closed">-->

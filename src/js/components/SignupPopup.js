@@ -6,22 +6,12 @@ class SignupPopup extends Popup {
     super(props);
   }
 
-  _setContent() {
-    super._setContent();
-    // if (this._buttonClassList.contains('popup__link_place_auth-popup')) {
-    //   this._container.appendChild(this._signUpPopupContent);
-    // }
-  }
-
   open = () => {
     super.open();
   }
 
   setEventListeners = () => {
     super.setEventListeners();
-    console.log(this._link);
-    console.log(this);
-    this._link.addEventListener('click', this._signInPopupOpen);
   }
 
   close = () => {
@@ -35,18 +25,19 @@ class SignupPopup extends Popup {
   //   this._authLink.removeEventListener('click', this.close);
   // }
   //
-  // _handleAuthSubmit = (event) => {
-  //   event.preventDefault();
-  //   this._api.signUp(this.form.email.value, this.form.password.value, this.form.name.value)
-  //     .then(() => {
-  //       this._resetForm();
-  //       this.close();
-  //       this._successPopupOpen();
-  //     })
-  //     .catch(err => {
-  //       this._popupContent.querySelector('.error-message__signup-err').textContent = err.message;
-  //     });
-  // }
+  _handleSubmit(event) {
+    super._handleSubmit(event);
+    console.log(this);
+    this._api.signUp(this._form.email.value, this._form.password.value, this._form.name.value)
+      .then(() => {
+        this._resetForm();
+        this.close();
+        // this._successPopupOpen();
+      })
+      .catch(err => {
+        this._popupContent.querySelector('.error-message__signup-err').textContent = err.message;
+      });
+  }
   //
   // close = () => {
   //   super.close();

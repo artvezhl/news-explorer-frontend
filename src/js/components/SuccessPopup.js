@@ -1,6 +1,6 @@
 import Popup from "./Popup";
 // TODO разобраться почему не работает ссылка на попап авторизации
-export class SuccessPopup extends Popup {
+class SuccessPopup extends Popup {
   static _template = document.querySelector('#success-popup').content;
 
   constructor({ container, authPopupOpen }) {
@@ -34,3 +34,5 @@ export class SuccessPopup extends Popup {
     this._container.removeChild(this._popupContent);
   }
 }
+
+export default SuccessPopup;

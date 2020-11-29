@@ -1,4 +1,4 @@
-export class MainApi {
+export default class MainApi {
   constructor(options) {
     this._url = options.baseUrl;
     this._headers = options.headers;
