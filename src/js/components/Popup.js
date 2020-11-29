@@ -6,6 +6,7 @@ class Popup {
     this._container = props.container;
     this._formValidator = props.validator;
     this._api = props.api;
+    this._successPopupOpen = props.successPopupOpen;
     this._renderHeader = props.renderHeader;
     this._formName = props.formName;
     this._handleSubmit = this._handleSubmit.bind(this);

@@ -27,15 +27,15 @@ class SignupPopup extends Popup {
   //
   _handleSubmit(event) {
     super._handleSubmit(event);
-    console.log(this);
+    // this._successPopupOpen();
     this._api.signUp(this._form.email.value, this._form.password.value, this._form.name.value)
       .then(() => {
         this._resetForm();
         this.close();
-        // this._successPopupOpen();
+        this._successPopupOpen();
       })
       .catch(err => {
-        this._popupContent.querySelector('.error-message__signup-err').textContent = err.message;
+        this._popup.querySelector('.error-message__signup-err').textContent = err.message;
       });
   }
   //

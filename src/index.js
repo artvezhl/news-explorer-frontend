@@ -5,13 +5,14 @@ import "./vendor/normalize.css";
 import "./styles/index.css";
 
 // импорт переменных
-import { headerAuthButton, signupButton, signInButton, loginPopup, signupPopup, successPopup, apiConfig } from './js/constants';
+import { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess, loginPopup, signupPopup, successPopup, apiConfig } from './js/constants';
 
 // импорт классов
 import MainApi from './js/api/MainApi';
 import FormValidator from "./js/components/FormValidator";
 import PopupSignIn from './js/components/PopupSignIn';
 import SignupPopup from './js/components/SignupPopup';
+import SuccessPopup from "./js/components/SuccessPopup";
 
 // параметры для классов
 // параметры для popupSignIn
@@ -23,6 +24,10 @@ const signInPopupArgs = {
 const signUpPopupArgs = {
   container: signupPopup,
   formName: 'reg',
+}
+// параметры для попапа успешной регистрации
+const successPopupArgs = {
+  container: successPopup,
 }
 
 // Создание экземпляров классов
@@ -37,6 +42,10 @@ const formValidator = (...arg) => new FormValidator(...arg);
 // добавление валидатора в объекты конструкторов классов
 signUpPopupArgs.validator = formValidator;
 signInPopupArgs.validator = formValidator;
+// создание экземпляра класса попапа успешной регистрации
+const popupSuccess = new SuccessPopup(successPopupArgs);
+// добавление методов в объекты конструкторов классов
+signUpPopupArgs.successPopupOpen = popupSuccess.open;
 // создание экземпляра класса логина
 const popupSignIn = new PopupSignIn(signInPopupArgs);
 // создание экземпляра класса регистрации
@@ -58,10 +67,7 @@ const popupSignUp = new SignupPopup(signUpPopupArgs);
 // //   container: popupContainer,
 // //   formName: 'auth',
 // // }
-// // // // параметры для попапа успешной регистрации
-// // const successPopupArgs = {
-// //   container: popupContainer,
-// // }
+
 // // // // параметры для попапа хэдера
 // // // const headerArgs = {}
 // // // // параметры для общего попапа
@@ -76,12 +82,6 @@ const popupSignUp = new SignupPopup(signUpPopupArgs);
 // // // добавление валидатора в объекты конструкторов классов
 // // signUpPopupArgs.validator = formValidator;
 // // signInPopupArgs.validator = formValidator;
-// //
-// // // выделение метода открытия попапа успешной регистрации
-// // const successPopup = new SuccessPopup(successPopupArgs);
-// // // добавление методов в объекты конструкторов классов
-// // signUpPopupArgs.successPopupOpen = successPopup.open;
-// //
 // // // создание экземпляра класса попапа регистрации
 // // const signUpPopup = new SignupPopup(signUpPopupArgs);
 // // signInPopupArgs.signUpPopupOpen = signUpPopup.open;
@@ -94,9 +94,10 @@ const popupSignUp = new SignupPopup(signUpPopupArgs);
 // //
 
 // слушатели событий
-// слушатель открытия попапа логина при клике на кнопку авторизации
 headerAuthButton.addEventListener('click', popupSignIn.open);
 signupButton.addEventListener('click', popupSignUp.open);
 signupButton.addEventListener('click', popupSignIn.close);
 signInButton.addEventListener('click', popupSignUp.close);
 signInButton.addEventListener('click', popupSignIn.open);
+signInButtonPlaceSuccess.addEventListener('click', popupSignIn.open);
+signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
