@@ -1,5 +1,4 @@
 .header__saved-page_active {
-  display: flex;
   border-bottom: 3px solid white;
   padding-top: 3px;
 }

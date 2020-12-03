@@ -21,6 +21,7 @@ export default class PopupSignIn extends Popup {
       if (isEmail(this._form.email.value)) {
         const data = await this._api.signIn(this._form.email.value, this._form.password.value);
         localStorage.setItem('token', data.token);
+        this._renderHeader();
       } else {
         throw Error;
       }

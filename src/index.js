@@ -39,7 +39,7 @@ const api = new MainApi(apiConfig);
 // добавление API в конструкторы классов
 signUpPopupArgs.api = api;
 signInPopupArgs.api = api;
-// headerArgs.getUserInfo = api.getUserInfo;
+headerArgs.getUserInfo = api.getUserInfo;
 // создание экземпляра класса валидатора
 const formValidator = (...arg) => new FormValidator(...arg);
 // добавление валидатора в объекты конструкторов классов
@@ -47,11 +47,9 @@ signUpPopupArgs.validator = formValidator;
 signInPopupArgs.validator = formValidator;
 // создание экземпляра класса хэдера
 const header = new Header(headerArgs);
-// добавление методов в объекты конструкторов классов
-signInPopupArgs.renderHeader = header.authorizedHeader;
+signInPopupArgs.renderHeader = header.render;
 // создание экземпляра класса попапа успешной регистрации
 const popupSuccess = new PopupSuccess(successPopupArgs);
-// добавление методов в объекты конструкторов классов
 signUpPopupArgs.successPopupOpen = popupSuccess.open;
 // создание экземпляра класса логина
 const popupSignIn = new PopupSignIn(signInPopupArgs);
@@ -97,6 +95,9 @@ const popupSignUp = new PopupSignup(signUpPopupArgs);
 // // signUpPopupArgs.signInPopupOpen = authPopup.open;
 // // successPopupArgs.signInPopupOpen = authPopup.open;
 // //
+
+// рендеринг шапки
+header.render();
 
 // слушатели событий
 headerAuthButton.addEventListener('click', popupSignIn.open);
