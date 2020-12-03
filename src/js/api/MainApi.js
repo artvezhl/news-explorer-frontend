@@ -7,8 +7,6 @@ export default class MainApi {
   // метод проверки ответа сервера и преобразование из json
   _getResponseData(res) {
     if (res.ok) {
-      // res.json()
-      //   .then(data => console.log(data));
       return res.json();
     }
     const json = res.json();
@@ -41,7 +39,7 @@ export default class MainApi {
         password: password,
       }),
     });
-    return result;
+    return this._getResponseData(result);
   }
 
   getUserInfo = async () => {

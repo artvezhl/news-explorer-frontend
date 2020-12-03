@@ -1,6 +1,6 @@
 import Popup from "./Popup";
 
-class SuccessPopup extends Popup {
+class PopupSuccess extends Popup {
   constructor(props) {
     super(props);
   }
@@ -41,4 +41,4 @@ class SuccessPopup extends Popup {
   // }
 }
 
-export default SuccessPopup;
+export default PopupSuccess;

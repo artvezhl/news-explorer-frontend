@@ -1,6 +1,6 @@
 import Popup from './Popup';
 
-class PopupSignIn extends Popup {
+export default class PopupSignIn extends Popup {
 
   constructor(props) {
     super(props);
@@ -14,24 +14,19 @@ class PopupSignIn extends Popup {
     super.setEventListeners();
   }
 
-  // _handleSubmit = (event) => {
-  //   super._handleAuthSubmit(event);
-  //   event.preventDefault();
-  //   // const user =
-  //   this._api.signIn(this._form.email.value, this._form.password.value)
-  //     .then((data) => {
-  //       console.log(data);
-  //       localStorage.setItem('token', data.token);
-  //       this._resetForm();
-  //       this.close();
-  //       this._renderHeader();
-  //     })
-  //     .catch(err => console.log(err));
-  // }
+  async _handleSubmit(event) {
+    super._handleSubmit(event);
+    try {
+      const data = await this._api.signIn(this._form.email.value, this._form.password.value);
+      localStorage.setItem('token', data.token);
+      this._resetForm();
+      this.close();
+    } catch (err) {
+      this._popup.querySelector('.error-message__error').textContent = err.message;
+    }
+  }
 
   close = () => {
     super.close();
   }
 }
-
-export default PopupSignIn;

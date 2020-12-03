@@ -1,6 +1,6 @@
 import BaseComponent from './BaseComponent';
 
-export class Header extends BaseComponent {
+export default class Header extends BaseComponent {
   constructor({ getUserInfo }) {
     super();
     this._getUserInfo = getUserInfo;
