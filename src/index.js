@@ -5,10 +5,15 @@ import "./vendor/normalize.css";
 import "./styles/index.css";
 
 // импорт переменных
-import { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess, loginPopup, signupPopup, successPopup, apiConfig } from './js/constants';
+import { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess, searchButton, loginPopup, signupPopup, successPopup, cardsContainer, searchForm } from './js/constants';
+import { apiConfig } from "./js/configs/apiConfig";
+import { newsConfig } from "./js/configs/newsConfig";
 
 // импорт классов
 import MainApi from './js/api/MainApi';
+import NewsApi from "./js/api/NewsApi";
+import NewsCard from "./js/components/NewsCard";
+import NewsCardList from "./js/components/NewsCardList";
 import FormValidator from "./js/components/FormValidator";
 import PopupSignIn from './js/components/PopupSignIn';
 import PopupSignup from './js/components/PopupSignup';
@@ -32,6 +37,10 @@ const successPopupArgs = {
 }
 // параметры для попапа хэдера
 const headerArgs = {}
+// параметры для листа карточек
+const cardListArgs = {
+  container: cardsContainer,
+}
 
 // Создание экземпляров классов
 // создание экземпляра класса MainApi
@@ -40,6 +49,15 @@ const api = new MainApi(apiConfig);
 signUpPopupArgs.api = api;
 signInPopupArgs.api = api;
 headerArgs.getUserInfo = api.getUserInfo;
+// создание экземпляра класса NewsApi
+const newsApi = new NewsApi(newsConfig);
+// добавление API в конструктор класса
+cardListArgs.searchResults = newsApi.getNews;
+// создание экземпляра класса NewsCard
+const newsCard = new NewsCard();
+cardListArgs.newsCard = newsCard;
+// создание экземпляра класса NewsCardList
+const newsCardList = new NewsCardList(cardListArgs);
 // создание экземпляра класса валидатора
 const formValidator = (...arg) => new FormValidator(...arg);
 // добавление валидатора в объекты конструкторов классов
@@ -99,6 +117,8 @@ const popupSignUp = new PopupSignup(signUpPopupArgs);
 // рендеринг шапки
 header.render();
 
+// newsCardList.renderResults('HTML');
+
 // слушатели событий
 headerAuthButton.addEventListener('click', popupSignIn.open);
 signupButton.addEventListener('click', popupSignUp.open);
@@ -107,3 +127,7 @@ signInButton.addEventListener('click', popupSignUp.close);
 signInButton.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
+searchButton.addEventListener('click', (event) => {
+  event.preventDefault();
+  newsCardList.renderResults(searchForm.stringToSearch.value).then(() => searchForm.stringToSearch.value = '');
+});

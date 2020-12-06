@@ -7,10 +7,12 @@
   font-weight: bold;
   margin: .5rem 0 1rem;
   padding: 0 1rem;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 1024px) {
   .article__source {
     padding: 0 1.5rem;
+    cursor: pointer;
   }
 }

@@ -33,36 +33,12 @@ class Popup {
 
   setEventListeners() {
     this._popup.querySelector('.popup__close').addEventListener('click', this.close);
-    // this._link = this._popup.querySelector('.popup__link');
     this._form.addEventListener('submit', this._handleSubmit);
-    // this._form.addEventListener('submit', event => {
-    //   event.preventDefault();
-    //   console.log('12345');
-    // });
-
-    // this._link.addEventListener('click', () => {
-    //   console.log(this);
-    //   this.close().then(() => this._signUpPopupOpen())
-    // });
-    // const linkClickHandler = () => {
-    //   console.log(this.close);
-    //   this.close.then(() => this.open());
-    // }
-    // this._link.addEventListener('click', linkClickHandler);
-    // this._link.addEventListener('click', this.popupLinkHandler);
-    // this._link.addEventListener('click', this.close);
-    // this._link.addEventListener('click', () => {
-    //   this.close();
-    //   this._signUpPopupOpen();
-    // })
   }
 
   _handleSubmit(event) {
     event.preventDefault();
   }
-  // _anotherPopupOpen = (event) => {
-  //   event
-  // }
 
   /* TODO: Можно лучше: разобраться с закрытием на Esc и на клик в пустое поле */
   // window.addEventListener('keydown', (e) => {
