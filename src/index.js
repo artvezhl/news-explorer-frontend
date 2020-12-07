@@ -20,6 +20,7 @@ import PopupSignup from './js/components/PopupSignup';
 import PopupSuccess from "./js/components/PopupSuccess";
 import Header from "./js/components/Header";
 
+// TODO remove below to constants
 // параметры для классов
 // параметры для popupSignIn
 const signInPopupArgs = {

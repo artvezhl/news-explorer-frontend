@@ -23,7 +23,7 @@
             </li>
             <li class="header__auth">
               <button class="header__button header__button_type_logout button header__button_active header__button_color_black">
-                <span class="header__auth-name">Грета</span>
+                <span class="header__auth-name"></span>
                 <img src="<%= require('../images/logout.svg') %>" alt="logout icon" class="header__logout-icon">
               </button>
             </li>
@@ -33,7 +33,7 @@
       </header>
       <section class="articles-info slim-block">
         <p class="articles-info__place">Сохранённые статьи</p>
-        <h1 class="articles-info__title">Грета, у вас 5 сохранённых статей</h1>
+        <h1 class="articles-info__title"><span class="articles-info__name"></span>, у вас 5 сохранённых статей</h1>
         <p class="articles-info__keywords">По ключевым словам:
           <span class="articles-info__keywords_weight_bold">Природа</span>,
           <span class="articles-info__keywords_weight_bold">Тайга</span> и
@@ -120,19 +120,19 @@
       </section>
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
     </footer>
-    <section class="popup">
-      <div class="popup__background slim-block">
-        <header class="header header_type_popup-closed">
-          <a href="index.html" class="header__logo">NewsExplorer</a>
-          <button class="popup__mobile-menu header__mobile-menu_type_opened"></button>
-        </header>
-        <div class="popup__links">
-          <a href="index.html" class="popup__link">Главная</a>
-          <a href="articles.html" class="popup__link">Сохранённые статьи</a>
-        </div>
-        <button class="popup__button button">Авторизоваться</button>
-      </div>
-    </section>
+<!--    <section class="popup">-->
+<!--      <div class="popup__background slim-block">-->
+<!--        <header class="header header_type_popup-closed">-->
+<!--          <a href="index.html" class="header__logo">NewsExplorer</a>-->
+<!--          <button class="popup__mobile-menu header__mobile-menu_type_opened"></button>-->
+<!--        </header>-->
+<!--        <div class="popup__links">-->
+<!--          <a href="index.html" class="popup__link">Главная</a>-->
+<!--          <a href="articles.html" class="popup__link">Сохранённые статьи</a>-->
+<!--        </div>-->
+<!--        <button class="popup__button button">Авторизоваться</button>-->
+<!--      </div>-->
+<!--    </section>-->
   </div>
   <script type="module" src="<%= htmlWebpackPlugin.files.js %>"></script>
 </body>

@@ -1,17 +1,23 @@
+// import styles
 import "../vendor/normalize.css";
 import "../styles/articles.css";
 
-const header = document.querySelector('.header');
-const menuButton = document.querySelector('.header__mobile-menu');
-const closeButton = document.querySelector('.popup__mobile-menu');
-const popup = document.querySelector('.popup-mobile');
+// импорт переменных
+import { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess, searchButton, loginPopup, signupPopup, successPopup, cardsContainer, searchForm } from '../js/constants';
+import { apiConfig } from "../js/configs/apiConfig";
 
-menuButton.addEventListener('click', (event) => {
-  header.classList.toggle('header_type_popup-opened');
-  popup.classList.toggle('popup_is-opened');
-});
+import MainApi from '../js/api/MainApi';
+import Header from "../js/components/Header";
 
-closeButton.addEventListener('click', () => {
-  header.classList.toggle('header_type_popup-opened');
-  popup.classList.toggle('popup_is-opened');
-});
+// параметры для попапа хэдера
+const headerArgs = {}
+
+// Создание экземпляров классов
+// создание экземпляра класса MainApi
+const api = new MainApi(apiConfig);
+headerArgs.getUserInfo = api.getUserInfo;
+// создание экземпляра класса хэдера
+const header = new Header(headerArgs);
+
+// рендеринг шапки
+header.render();

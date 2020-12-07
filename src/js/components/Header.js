@@ -8,6 +8,7 @@ export default class Header extends BaseComponent {
     this._logoutButton = document.querySelector('.header__button_type_logout');
     this._loginName = document.querySelector('.header__auth-name');
     this._savedPages = document.querySelector('.header__saved-page');
+    this._articlesInfoName = document.querySelector('.articles-info__name');
     this.render = this.render.bind(this);
   }
 
@@ -24,8 +25,9 @@ export default class Header extends BaseComponent {
 
   _logIn = (data) => {
     this._savedPages.classList.add('header__saved-page_visible');
-    this._loginButton.classList.remove('header__button_active');
+    if (this._loginButton) this._loginButton.classList.remove('header__button_active');
     this._logoutButton.classList.add('header__button_active');
+    if (this._articlesInfoName) this._articlesInfoName.textContent = data.name;
     this._loginName.textContent = data.name;
     this._logoutButton.addEventListener('click', this._logOut);
   }
