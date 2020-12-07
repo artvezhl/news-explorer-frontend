@@ -16,7 +16,7 @@
         <nav class="header__menu">
           <ul class="header__menu-list">
             <li class="header__main-page header__main-page_active"><a href="index.html" class="header__link">Главная</a></li>
-            <li class="header__saved-page"><a href="index.html" class="header__link header__link_color_grey">Сохраненные статьи</a></li>
+            <li class="header__saved-page"><a href="articles.html" class="header__link header__link_color_grey">Сохраненные статьи</a></li>
             <li class="header__auth">
               <button class="header__button button header__button_type_login header__button_active">Авторизоваться</button>
               <button class="header__button header__button_type_logout button">
@@ -161,6 +161,9 @@
 <!--    </section>-->
     <template id="article" style="display: none;">
       <article class="search-results__article article">
+        <div class="article__appear-block">
+          <p class="article__appear-phrase"></p>
+        </div>
         <button class="article__like-button"></button>
         <img src="./images/article-image.jpg" alt="Изображение к статье" class="article__image">
         <p class="article__date"></p>

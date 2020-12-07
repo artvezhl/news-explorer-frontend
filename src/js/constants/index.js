@@ -18,4 +18,6 @@ const searchResultsEmpty = document.querySelector('.search-results__empty');
 const searchForm = document.forms.search;
 
 // экспорт переменных
-export { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess, searchButton, loginPopup, signupPopup, successPopup, cardsContainer, searchResultsArticles, searchResultsReady, loader, searchResultsEmpty, searchForm };
+export { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess,
+  searchButton, loginPopup, signupPopup, successPopup, cardsContainer, searchResultsArticles,
+  searchResultsReady, loader, searchResultsEmpty, searchForm };

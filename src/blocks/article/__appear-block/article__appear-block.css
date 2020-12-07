@@ -1,18 +1,18 @@
-.article__remove {
+.article__appear-block {
   display: none;
   align-items: center;
   height: 40px;
-  width: 159px;
+  padding: 0 10px;
   border-radius: 10px;
   position: absolute;
   top: 1.5rem;
   right: 4.5rem;
   background-color: white;
   justify-content: center;
+  margin-left: 24px;
 }
 
 @media screen and (min-width: 1024px) {
-  .article__remove {
-    display: flex;
+  .article__appear-block {
   }
 }
