@@ -14,23 +14,24 @@ export default class NewsCardList {
 
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(cards, string) {
-    if (loader) loader.classList.add('search-results__searching_active');
-    if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
+    console.log(cards);
+    // if (loader) loader.classList.add('search-results__searching_active');
+    // if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
     cards.forEach((item) => {
       this.addCard(item, string);
     });
-    if (!cards.length) {
-      searchResultsReady.classList.remove('search-results__ready_active');
-      searchResultsEmpty.classList.add('search-results__empty_active');
-    } else {
-      searchResultsReady.classList.add('search-results__ready_active');
-    }
-    loader.classList.remove('search-results__searching_active');
+    // if (!cards.length) {
+    //   searchResultsReady.classList.remove('search-results__ready_active');
+    //   searchResultsEmpty.classList.add('search-results__empty_active');
+    // } else {
+    //   searchResultsReady.classList.add('search-results__ready_active');
+    // }
+    // loader.classList.remove('search-results__searching_active');
   }
 
   // отвечает за отрисовку лоудера
   renderLoader() {
-
+    loader.classList.toggle('search-results__searching_active');
   }
 
   // принимает объект ошибки и показывает ошибку в интерфейсе

@@ -5,7 +5,21 @@ import "./vendor/normalize.css";
 import "./styles/index.css";
 
 // импорт переменных
-import { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess, searchButton, loginPopup, signupPopup, successPopup, cardsContainer, searchForm } from './js/constants';
+import {
+  headerAuthButton,
+  signupButton,
+  signInButton,
+  signInButtonPlaceSuccess,
+  searchButton,
+  loginPopup,
+  signupPopup,
+  successPopup,
+  cardsContainer,
+  searchForm,
+  loader,
+  searchResultsEmpty,
+  searchResultsReady
+} from './js/constants';
 import { apiConfig } from "./js/configs/apiConfig";
 import { newsConfig } from "./js/configs/newsConfig";
 
@@ -92,9 +106,28 @@ signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
 searchButton.addEventListener('click', (event) => {
   event.preventDefault();
   const stringToFind = searchForm.stringToSearch.value;
-  Promise.all([newsApi.getNews(stringToFind)]).then((value) => { newsCardList.renderResults(value[0], stringToFind) })
-    .then(() => searchForm.stringToSearch.value = '')
-    .catch(err => console.log(err));
+
+  return new Promise((resolve, reject) => {
+    newsCardList.renderLoader();
+    if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
+    const cardsArray = newsApi.getNews(stringToFind);
+    resolve(cardsArray);
+  })
+    .then((cards) => {
+      (!cards.length) ?
+        searchResultsEmpty.classList.add('search-results__empty_active') :
+        searchResultsReady.classList.add('search-results__ready_active');
+      newsCardList.renderResults(cards, stringToFind);
+    })
+    .catch(err => console.log(err))
+    .finally(() => {
+      newsCardList.renderLoader();
+      searchForm.stringToSearch.value = '';
+    });
+
+  // Promise.all([newsApi.getNews(stringToFind)]).then((value) => { newsCardList.renderResults(value[0], stringToFind) })
+  //   .then(() => searchForm.stringToSearch.value = '')
+  //   .catch(err => console.log(err));
   // console.log(result);
   // newsApi.getNews('html');
   // newsCardList.renderResults(newsApi.getNews(searchForm.stringToSearch.value)).then(() => searchForm.stringToSearch.value = '');

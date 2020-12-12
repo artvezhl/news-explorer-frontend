@@ -34,6 +34,15 @@ const newsCardList = new NewsCardList(cardListArgs);
 // рендеринг шапки
 header.render();
 
-Promise.all([api.getInitialCards()])
-  .then((value) => { newsCardList.renderResults(value[0]) })
+const pageRender = new Promise((resolve, reject) => {
+  const savedCards = api.getInitialCards();
+  // console.log(savedCards)
+  resolve(savedCards);
+})
+  .then((value) => {
+    newsCardList.renderResults(value) })
   .catch(err => console.log(err));
+
+// ([api.getInitialCards()])
+//   .then((value) => { newsCardList.renderResults(value[0]) })
+//   .catch(err => console.log(err));

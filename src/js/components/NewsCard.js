@@ -30,10 +30,13 @@ export default class NewsCard {
   }
 
   _setListeners = (card) => {
-    const addCardButton = card.querySelector('.article__like-button');
-    addCardButton.addEventListener('mouseover', () => this._buttonHoverHandler(card));
-    addCardButton.addEventListener('mouseout', () => this._buttonHoverHandler(card));
-    addCardButton.addEventListener('click', this._like);
+    let cardButton;
+    card.querySelector('.article__like-button')
+      ? cardButton = card.querySelector('.article__like-button')
+      : cardButton = card.querySelector('.article__remove-button');
+    cardButton.addEventListener('mouseover', () => this._buttonHoverHandler(card));
+    cardButton.addEventListener('mouseout', () => this._buttonHoverHandler(card));
+    cardButton.addEventListener('click', this._like);
   }
 
   _buttonHoverHandler(card) {
