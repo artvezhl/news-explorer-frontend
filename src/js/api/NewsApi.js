@@ -4,9 +4,10 @@ export default class NewsApi {
   }
 
   getNews = async (stringToFind) => {
-    const result = await fetch(this._url(stringToFind));
+    let result = await fetch(this._url(stringToFind));
     if (result) {
-      return result.json();
+      result = await result.json();
+      return result.articles;
     }
     const json = result.json();
     return json.then(Promise.reject.bind(Promise));

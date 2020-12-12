@@ -13,37 +13,19 @@ export default class NewsCardList {
   }
 
   // принимает массив экземпляров карточек и отрисовывает их
-  async renderResults(string) {
-    loader.classList.add('search-results__searching_active');
-    searchResultsEmpty.classList.remove('search-results__empty_active');
-    try {
-      const cards = await this._searchResult(string);
-      cards.articles.forEach((item) => {
-        this.addCard(item);
-      });
-      if (!cards.articles.length) {
-        searchResultsReady.classList.remove('search-results__ready_active');
-        searchResultsEmpty.classList.add('search-results__empty_active');
-      } else {
-        searchResultsReady.classList.add('search-results__ready_active');
-      }
-      loader.classList.remove('search-results__searching_active');
-    } catch (err) {
-      console.log(err);
+  renderResults(cards, string) {
+    if (loader) loader.classList.add('search-results__searching_active');
+    if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
+    cards.forEach((item) => {
+      this.addCard(item, string);
+    });
+    if (!cards.length) {
+      searchResultsReady.classList.remove('search-results__ready_active');
+      searchResultsEmpty.classList.add('search-results__empty_active');
+    } else {
+      searchResultsReady.classList.add('search-results__ready_active');
     }
-
-
-    // const result = await this._searchResult(string);
-    // console.log('------------------');
-    // console.log(result.articles);
-    // return result.articles.forEach(article => {
-    //   this._container.appendChild(this._cardTemplate);
-    //   this._cardTemplate.querySelector('.article__image').setAttribute('src', article.urlToImage);
-    //   this._cardTemplate.querySelector('.article__date').textContent = formatDate(article.publishedAt);
-    //   this._cardTemplate.querySelector('.article__title').textContent = article.title;
-    //   this._cardTemplate.querySelector('.article__subtitle').textContent = article.description;
-    //   this._cardTemplate.querySelector('.article__source').textContent = article.source.name;
-    // })
+    loader.classList.remove('search-results__searching_active');
   }
 
   // отвечает за отрисовку лоудера
@@ -58,12 +40,44 @@ export default class NewsCardList {
 
   // отвечает за функциональность кнопки «Показать ещё»
   showMore() {
-
+//     const items = [...this._container.querySelectorAll('article')];
+//     const showMoreButton = this._container.querySelector('.search-results__button');
+//     let visible = items.length;
+//
+// // show/hide items according to n of visible
+//     const showHide = n => {
+//       items.forEach((item, i) => {
+//         if (i < n) {
+//           if (!item.parentElement) ul.appendChild(li);
+//         } else {
+//           if (item.parentElement) ul.removeChild(li);
+//         }
+//       });
+//       return n;
+//     }
+//
+//     visible = showHide(3);
+//
+//     showMoreButton.addEventListener('click', () => {
+//       visible = showhide(Math.min(visible + 3, items.length))
+//       if (visible >= items.length) moar.innerText = "Больше нет";
+//     });
+//
+//
+//
+//     items.forEach((li, i) => {
+//       if (i < n) {
+//         if (!li.parentElement) ul.appendChild(li);
+//       } else {
+//         if (li.parentElement) ul.removeChild(li);
+//       }
+//     });
+//     return n;
   }
 
   // принимает экземпляр карточки и добавляет её в список
-  addCard(data) {
-    this._container.appendChild(this._card.create(data, formatDate));
+  addCard(data, string) {
+    this._container.appendChild(this._card.create(data, formatDate, string));
   }
 
   _setHandlers() {

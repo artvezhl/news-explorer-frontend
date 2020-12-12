@@ -38,6 +38,8 @@ const successPopupArgs = {
 }
 // параметры для попапа хэдера
 const headerArgs = {}
+// параметры для карточек
+const newsCardArgs = {}
 // параметры для листа карточек
 const cardListArgs = {
   container: cardsContainer,
@@ -50,12 +52,13 @@ const api = new MainApi(apiConfig);
 signUpPopupArgs.api = api;
 signInPopupArgs.api = api;
 headerArgs.getUserInfo = api.getUserInfo;
+newsCardArgs.api = api;
 // создание экземпляра класса NewsApi
 const newsApi = new NewsApi(newsConfig);
 // добавление API в конструктор класса
 cardListArgs.searchResults = newsApi.getNews;
 // создание экземпляра класса NewsCard
-const newsCard = new NewsCard();
+const newsCard = new NewsCard(newsCardArgs);
 cardListArgs.newsCard = newsCard;
 // создание экземпляра класса NewsCardList
 const newsCardList = new NewsCardList(cardListArgs);
@@ -75,50 +78,8 @@ const popupSignIn = new PopupSignIn(signInPopupArgs);
 // создание экземпляра класса регистрации
 const popupSignUp = new PopupSignup(signUpPopupArgs);
 
-// // импорт классов
-// import Popup from "./js/components/Popup";
-// import { MainApi } from './js/api/MainApi';
-// import FormValidator from "./js/components/FormValidator";
-// import PopupSuccess from "./js/components/PopupSuccess";
-// import PopupSignup from './js/components/PopupSignup';
-// import PopupSignIn from './js/components/PopupSignIn';
-// import { Header } from "./js/components/Header";
-//
-
-// переменные для передачи в конструкторы классов
-// // // параметры для попапа авторизации
-// // const signInPopupArgs = {
-// //   container: popupContainer,
-// //   formName: 'auth',
-// // }
-
-// параметры для общего попапа
-
-// // создание экземпляра класса хэдера
-// const header = new Header(headerArgs);
-// // добавление методов в объекты конструкторов классов
-// signInPopupArgs.renderHeader = header.authorizedHeader;
-// // //
-// // // создание экземпляра класса валидатора
-// // const formValidator = (...arg) => new FormValidator(...arg);
-// // // добавление валидатора в объекты конструкторов классов
-// // signUpPopupArgs.validator = formValidator;
-// // signInPopupArgs.validator = formValidator;
-// // // создание экземпляра класса попапа регистрации
-// // const signUpPopup = new PopupSignup(signUpPopupArgs);
-// // signInPopupArgs.signUpPopupOpen = signUpPopup.open;
-// //
-// // // создание экземпляра класса попапа авторизации
-// // const authPopup = new PopupSignIn(signInPopupArgs);
-// // // добавление методов в объекты конструкторов классов
-// // signUpPopupArgs.signInPopupOpen = authPopup.open;
-// // successPopupArgs.signInPopupOpen = authPopup.open;
-// //
-
 // рендеринг шапки
 header.render();
-
-// newsCardList.renderResults('HTML');
 
 // слушатели событий
 headerAuthButton.addEventListener('click', popupSignIn.open);
@@ -130,5 +91,11 @@ signInButtonPlaceSuccess.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
 searchButton.addEventListener('click', (event) => {
   event.preventDefault();
-  newsCardList.renderResults(searchForm.stringToSearch.value).then(() => searchForm.stringToSearch.value = '');
+  const stringToFind = searchForm.stringToSearch.value;
+  Promise.all([newsApi.getNews(stringToFind)]).then((value) => { newsCardList.renderResults(value[0], stringToFind) })
+    .then(() => searchForm.stringToSearch.value = '')
+    .catch(err => console.log(err));
+  // console.log(result);
+  // newsApi.getNews('html');
+  // newsCardList.renderResults(newsApi.getNews(searchForm.stringToSearch.value)).then(() => searchForm.stringToSearch.value = '');
 });

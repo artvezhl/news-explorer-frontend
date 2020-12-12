@@ -51,42 +51,31 @@ export default class MainApi {
     return this._getResponseData(result);
   }
 
-  // signIn = (email, password) => {
-  //   fetch(`${this._url}/signin`, {
-  //     method: 'POST',
-  //     headers: this._headers,
-  //     credentials: 'include',
-  //     body: JSON.stringify({
-  //       email: email,
-  //       password: password,
-  //     })
-  //   })
-  //     .then((data) => {
-  //       localStorage.setItem('token', data.token);
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-
 // запрос стартовых карточек с сервера
-  // getInitialCards() {
-  //   return fetch(`${this._url}/cards`, {
-  //     headers: this._headers
-  //   })
-  //     .then(res => this._getResponseData(res));
-  // }
+  getInitialCards() {
+    return fetch(`${this._url}/articles`, {
+      headers: this._headers
+    })
+      .then(res => this._getResponseData(res));
+  }
 
   // добавление новой карточки на сервер
-  // addNewCard(name, link) {
-  //   return fetch(`${this._url}/cards`, {
-  //     method: 'POST',
-  //     headers: this._headers,
-  //     body: JSON.stringify({
-  //       name: name,
-  //       link: link
-  //     })
-  //   })
-  //     .then(res => this._getResponseData(res));
-  // }
+  addNewsCard = async (props) => {
+    const result = await fetch(`${this._url}/articles`, {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify({
+        keyword: props.keyword,
+        title: props.title,
+        text: props.text,
+        date: props.date,
+        source: props.source,
+        link: props.link,
+        image: props.imageUrl,
+      })
+    })
+    return this._getResponseData(result);
+  }
 
   // удаление карточки с сервера
   // removeCard(cardId) {
