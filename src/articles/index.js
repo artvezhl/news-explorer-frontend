@@ -40,7 +40,12 @@ const pageRender = new Promise((resolve, reject) => {
   resolve(savedCards);
 })
   .then((value) => {
-    newsCardList.renderResults(value) })
+    newsCardList.renderResults(value);
+  })
+  .then(() => {
+    newsCardList.cardsNumberRender();
+    newsCardList.keywordsRender();
+  })
   .catch(err => console.log(err));
 
 // ([api.getInitialCards()])

@@ -6,13 +6,38 @@ export default class NewsCardList {
     this._card = props.newsCard;
   }
 
+  // принимает экземпляр карточки и добавляет её в список
+  addCard(data, string) {
+    this._container.appendChild(this._card.create(data, string));
+  }
+
+  cardsNumberRender() {
+    if (document.querySelector('.articles-info__number'))
+      document.querySelector('.articles-info__number').textContent =
+        `, у вас ${this._cards.length} сохранённых статей`;
+  }
+
+  keywordsRender() {
+    const keywords = document.querySelectorAll('.articles-info__keywords_weight_bold');
+    let keywordsArr = [];
+    this._cards.forEach(card => keywordsArr.push(card.keyword));
+    keywordsArr = [...new Set(keywordsArr)];
+    keywords[0].textContent = keywordsArr[0];
+    keywords[1].textContent = keywordsArr[1];
+    keywords[2].textContent = `${keywordsArr.length - 2}-м другим словам`;
+  }
+
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(cards, string) {
     // if (loader) loader.classList.add('search-results__searching_active');
     // if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
+    // console.log(cards);
+    this._cards = cards;
     cards.forEach((item) => {
       this.addCard(item, string);
     });
+    // this._cardsNumberRender(cards.length);
+    // this._keywordsRender(cards);
     // if (!cards.length) {
     //   searchResultsReady.classList.remove('search-results__ready_active');
     //   searchResultsEmpty.classList.add('search-results__empty_active');
@@ -67,11 +92,6 @@ export default class NewsCardList {
 //       }
 //     });
 //     return n;
-  }
-
-  // принимает экземпляр карточки и добавляет её в список
-  addCard(data, string) {
-    this._container.appendChild(this._card.create(data, string));
   }
 
   _setHandlers() {
