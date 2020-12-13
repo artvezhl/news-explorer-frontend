@@ -1,20 +1,13 @@
-import formatDate from "../utils/formatDate";
-import { searchResultsArticles, searchResultsReady, loader, searchResultsEmpty } from "../constants";
+import { searchResultsArticles, loader } from "../constants";
 
 export default class NewsCardList {
   constructor(props) {
     this._container = props.container;
     this._card = props.newsCard;
-    this._searchResult = props.searchResults;
-  }
-
-  _clearCardList = () => {
-    return searchResultsArticles.innerHTML = '';
   }
 
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(cards, string) {
-    console.log(cards);
     // if (loader) loader.classList.add('search-results__searching_active');
     // if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
     cards.forEach((item) => {
@@ -78,7 +71,7 @@ export default class NewsCardList {
 
   // принимает экземпляр карточки и добавляет её в список
   addCard(data, string) {
-    this._container.appendChild(this._card.create(data, formatDate, string));
+    this._container.appendChild(this._card.create(data, string));
   }
 
   _setHandlers() {

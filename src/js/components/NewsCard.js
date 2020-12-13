@@ -14,15 +14,16 @@ export default class NewsCard {
   }
 
   // метод отрисовки карточек с сервера
-  create(article, formatDate, string) {
+  create(article, string) {
     this._card = NewsCard._template.cloneNode(true).children[0];
     this._card.setAttribute('keyword', string);
-    if (article.urlToImage) this._card.querySelector('.article__image').setAttribute('src', article.urlToImage);
-    this._card.querySelector('.article__date').textContent = formatDate(article.publishedAt);
+    if (article.image) this._card.querySelector('.article__image').setAttribute('src', article.image);
+    if (this._card.querySelector('.article__keyword')) this._card.querySelector('.article__keyword').textContent = article.keyword;
+    this._card.querySelector('.article__date').textContent = article.date;
     this._card.querySelector('.article__title').textContent = article.title;
-    this._card.querySelector('.article__subtitle').textContent = article.description;
-    this._card.querySelector('.article__source').textContent = article.source.name;
-    this._card.querySelector('.article__source').setAttribute('href', article.url);
+    this._card.querySelector('.article__subtitle').textContent = article.text;
+    this._card.querySelector('.article__source').textContent = article.source;
+    this._card.querySelector('.article__source').setAttribute('href', article.link);
     this._renderIcon(this._card);
     this._setListeners(this._card);
 
@@ -65,21 +66,12 @@ export default class NewsCard {
       link: currentCard.querySelector('.article__source').getAttribute('href'),
       imageUrl: currentCard.querySelector('.article__image').getAttribute('src'),
     };
-    // console.log(cardInfo)
-    // const cardId = currentCard.getAttribute('data-id');
-    // event.preventDefault();
     try {
       await this._api.addNewsCard(cardInfo);
       event.target.classList.add('article__like-button_active');
     } catch(err) {
       console.log(err);
     }
-    // // await this._api.addNewsCard(cardInfo)
-    // //   .then((obj) => {
-    //     event.target.classList.toggle('place-card__like-icon_liked');
-    //     this._cardLikes.textContent = obj.likes.length;
-    //   })
-    //   .catch(err => console.log(err));
   }
   //
   // _removeLike = (event) => {
