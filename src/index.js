@@ -124,11 +124,4 @@ searchButton.addEventListener('click', (event) => {
       newsCardList.renderLoader();
       searchForm.stringToSearch.value = '';
     });
-
-  // Promise.all([newsApi.getNews(stringToFind)]).then((value) => { newsCardList.renderResults(value[0], stringToFind) })
-  //   .then(() => searchForm.stringToSearch.value = '')
-  //   .catch(err => console.log(err));
-  // console.log(result);
-  // newsApi.getNews('html');
-  // newsCardList.renderResults(newsApi.getNews(searchForm.stringToSearch.value)).then(() => searchForm.stringToSearch.value = '');
 });

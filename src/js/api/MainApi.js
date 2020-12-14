@@ -78,13 +78,13 @@ export default class MainApi {
   }
 
   // удаление карточки с сервера
-  // removeCard(cardId) {
-  //   return fetch(`${this._url}/cards/${cardId}`, {
-  //     method: 'DELETE',
-  //     headers: this._headers
-  //   })
-  //     .then(res => this._getResponseData(res));
-  // }
+  removeCard = async (cardId) => {
+    const result = await fetch(`${this._url}/articles/${cardId}`, {
+      method: 'DELETE',
+      headers: this._headers
+    })
+    return this._getResponseData(result);
+  }
 
   // постановка лайка
   // setLike(cardId) {

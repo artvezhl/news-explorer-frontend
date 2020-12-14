@@ -35,7 +35,10 @@ export default class NewsCardList {
     this._cards = cards;
     cards.forEach((item) => {
       this.addCard(item, string);
-    });
+    })
+      // .then(() => {
+      // this._card.onload = this.showMore();
+    // });
     // this._cardsNumberRender(cards.length);
     // this._keywordsRender(cards);
     // if (!cards.length) {
@@ -59,39 +62,26 @@ export default class NewsCardList {
 
   // отвечает за функциональность кнопки «Показать ещё»
   showMore() {
-//     const items = [...this._container.querySelectorAll('article')];
-//     const showMoreButton = this._container.querySelector('.search-results__button');
-//     let visible = items.length;
-//
-// // show/hide items according to n of visible
-//     const showHide = n => {
-//       items.forEach((item, i) => {
-//         if (i < n) {
-//           if (!item.parentElement) ul.appendChild(li);
-//         } else {
-//           if (item.parentElement) ul.removeChild(li);
-//         }
-//       });
-//       return n;
-//     }
-//
-//     visible = showHide(3);
-//
-//     showMoreButton.addEventListener('click', () => {
-//       visible = showhide(Math.min(visible + 3, items.length))
-//       if (visible >= items.length) moar.innerText = "Больше нет";
-//     });
-//
-//
-//
-//     items.forEach((li, i) => {
-//       if (i < n) {
-//         if (!li.parentElement) ul.appendChild(li);
-//       } else {
-//         if (li.parentElement) ul.removeChild(li);
-//       }
-//     });
-//     return n;
+    console.log(document.getElementsByClassName('article'));
+    // window.onload = function () {
+    //   var box=document.getElementsByClassName('box');
+    //   var btn=document.getElementById('button');
+    //   for (let i=10;i<box.length;i++) {
+    //     box[i].style.display = "none";
+    //   }
+    //
+    //   var countD = 10;
+    //   btn.addEventListener("click", function() {
+    //     var box=document.getElementsByClassName('box');
+    //     countD += 10;
+    //     if (countD <= box.length){
+    //       for(let i=0;i<countD;i++){
+    //         box[i].style.display = "block";
+    //       }
+    //     }
+    //
+    //   })
+    // }
   }
 
   _setHandlers() {

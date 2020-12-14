@@ -36,7 +36,6 @@ header.render();
 
 const pageRender = new Promise((resolve, reject) => {
   const savedCards = api.getInitialCards();
-  // console.log(savedCards)
   resolve(savedCards);
 })
   .then((value) => {
@@ -47,7 +46,3 @@ const pageRender = new Promise((resolve, reject) => {
     newsCardList.keywordsRender();
   })
   .catch(err => console.log(err));
-
-// ([api.getInitialCards()])
-//   .then((value) => { newsCardList.renderResults(value[0]) })
-//   .catch(err => console.log(err));

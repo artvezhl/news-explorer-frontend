@@ -11,6 +11,7 @@
 @import url('__appear-phrase/article__appear-phrase.css');
 @import url('__appear-block/_active/article__appear-block_active.css');
 @import url('./__like-button/_active/article__like-button_active.css');
+@import url('./__like-button/_hover/article__like-button_hover.css');
 
 .article {
   position: relative;

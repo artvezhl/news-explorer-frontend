@@ -9,14 +9,17 @@ export default class NewsCard {
   // У этой иконки три состояния: иконка незалогиненного пользователя,
   // активная иконка залогиненного, неактивная иконка залогиненного
   _renderIcon(card) {
-    if (!localStorage.token) card.querySelector('.article__like-button').setAttribute('disabled', 'disabled');
-    // event.target.classList.toggle('article__like-button_active');
+    if (!localStorage.token) {
+      card.querySelector('.article__like-button').setAttribute('disabled', 'disabled');
+    }
   }
 
   // метод отрисовки карточек с сервера
   create(article, string) {
     this._card = NewsCard._template.cloneNode(true).children[0];
-    this._card.setAttribute('keyword', string);
+    string ?
+      this._card.setAttribute('keyword', string) :
+      this._card.setAttribute('data-id', article._id);
     if (article.image) this._card.querySelector('.article__image').setAttribute('src', article.image);
     if (this._card.querySelector('.article__keyword')) this._card.querySelector('.article__keyword').textContent = article.keyword;
     this._card.querySelector('.article__date').textContent = article.date;
@@ -35,28 +38,35 @@ export default class NewsCard {
     card.querySelector('.article__like-button')
       ? cardButton = card.querySelector('.article__like-button')
       : cardButton = card.querySelector('.article__remove-button');
-    cardButton.addEventListener('mouseover', () => this._buttonHoverHandler(card));
-    cardButton.addEventListener('mouseout', () => this._buttonHoverHandler(card));
-    cardButton.addEventListener('click', this._like);
+    cardButton.addEventListener('mouseover', (event) => this._buttonHoverHandler(card, event));
+    cardButton.addEventListener('mouseout', (event) => this._buttonHoverHandler(card, event));
+    cardButton.classList.contains('article__like-button') ?
+      cardButton.addEventListener('click', this._addCard) :
+      cardButton.addEventListener('click', this._removeCard);
   }
 
-  _buttonHoverHandler(card) {
+  _buttonHoverHandler(card, event) {
     let appearText = card.querySelector('.article__appear-phrase');
+    if(window.innerWidth > 1023) {
+      card.querySelector('.article__appear-block').classList.toggle('article__appear-block_active');
+    }
     if (localStorage.token) {
       appearText.textContent = 'Нажмите, чтобы сохранить статью';
     }
     if (!localStorage.token) {
       appearText.textContent = 'Войдите, чтобы сохранить статью';
     }
-    if(window.innerWidth > 1023) {
-      card.querySelector('.article__appear-block').classList.toggle('article__appear-block_active');
+    if (localStorage.token && event.target.classList.contains('article__like-button_active')) {
+      appearText.textContent = 'Нажмите, чтобы удалить статью';
+    }
+    if(localStorage.token && event.target.classList.contains('article__remove-button')) {
+      appearText.textContent = 'Убрать из сохранённых';
     }
   }
 
 
-  _like = async (event) => {
+  _addCard = async (event) => {
     const currentCard = event.target.closest('article');
-    console.log(currentCard);
     const cardInfo = {
       keyword: currentCard.getAttribute('keyword'),
       title: currentCard.querySelector('.article__title').textContent,
@@ -73,19 +83,19 @@ export default class NewsCard {
       console.log(err);
     }
   }
-  //
-  // _removeLike = (event) => {
-  //   const currentCard = event.target.closest('div.place-card');
-  //   const cardId = currentCard.getAttribute('data-id');
-  //   event.preventDefault();
-  //   this._api.removeLike(cardId)
-  //     .then((obj) => {
-  //       event.target.classList.toggle('place-card__like-icon_liked');
-  //       this._cardLikes.textContent = obj.likes.length;
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-  //
+
+  _removeCard = async (event) => {
+    const currentCard = event.target.closest('article.article');
+    const cardId = currentCard.getAttribute('data-id');
+    event.preventDefault();
+    try {
+      await this._api.removeCard(cardId);
+      currentCard.parentElement.removeChild(currentCard);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   // _removeListeners = () => {
   //   this._card.querySelector('.place-card__like-icon').removeEventListener('click', this._like);
   //   this._card.querySelector('.place-card__delete-icon').removeEventListener('click', this._remove);
