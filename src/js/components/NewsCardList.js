@@ -1,4 +1,4 @@
-import { searchResultsArticles, loader } from "../constants";
+import { loader } from "../constants";
 
 export default class NewsCardList {
   constructor(props) {
@@ -36,6 +36,7 @@ export default class NewsCardList {
     cards.forEach((item) => {
       this.addCard(item, string);
     })
+    // this._cards.onload = this.showMore();
       // .then(() => {
       // this._card.onload = this.showMore();
     // });
@@ -62,7 +63,22 @@ export default class NewsCardList {
 
   // отвечает за функциональность кнопки «Показать ещё»
   showMore() {
-    console.log(document.getElementsByClassName('article'));
+    const articles = document.getElementsByClassName('article');
+    const button = document.querySelector('.search-results__button');
+    for (let i = 3; i < articles.length; i++) {
+      articles[i].style.display = "none";
+    }
+    let count = 3;
+    button.addEventListener("click", () => {
+      const articles = document.getElementsByClassName('article');
+      count += 3;
+      if (count <= articles.length) {
+        for (let i = 0; i < count; i++) {
+          articles[i].style.display = "block";
+        }
+      }
+    });
+
     // window.onload = function () {
     //   var box=document.getElementsByClassName('box');
     //   var btn=document.getElementById('button');
@@ -85,6 +101,6 @@ export default class NewsCardList {
   }
 
   _setHandlers() {
-
+    const button = document.querySelector('.search-results__button');
   }
 }

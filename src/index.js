@@ -114,10 +114,13 @@ searchButton.addEventListener('click', (event) => {
     resolve(cardsArray);
   })
     .then((cards) => {
-      (!cards.length) ?
-        searchResultsEmpty.classList.add('search-results__empty_active') :
-        searchResultsReady.classList.add('search-results__ready_active');
+      if (!cards.length) {
+        searchResultsEmpty.classList.add('search-results__empty_active');
+        return;
+      }
+      searchResultsReady.classList.add('search-results__ready_active');
       newsCardList.renderResults(cards, stringToFind);
+      cards.onload = newsCardList.showMore();
     })
     .catch(err => console.log(err))
     .finally(() => {
