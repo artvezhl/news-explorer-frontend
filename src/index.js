@@ -105,6 +105,8 @@ signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
 searchButton.addEventListener('click', (event) => {
   event.preventDefault();
   const stringToFind = searchForm.stringToSearch.value;
+  if (searchResultsReady) searchResultsReady.classList.remove('search-results__ready_active');
+  cardsContainer.innerHTML = null;
 
   return new Promise((resolve, reject) => {
     newsCardList.renderLoader();
