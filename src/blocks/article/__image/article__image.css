@@ -2,9 +2,18 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   width: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media screen and (min-width: 768px) {
   .article__image {
+    max-height: 150px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .article__image {
+    max-height: 272px;
   }
 }

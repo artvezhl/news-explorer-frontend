@@ -16,7 +16,6 @@ import {
   successPopup,
   cardsContainer,
   searchForm,
-  loader,
   searchResultsEmpty,
   searchResultsReady
 } from './js/constants';

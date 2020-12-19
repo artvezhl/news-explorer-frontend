@@ -11,7 +11,6 @@ const signupPopup = document.querySelector('#reg-popup');
 const successPopup = document.querySelector('#success-popup');
 // другое
 const cardsContainer = document.querySelector('.search-results__articles');
-const searchResultsArticles = document.querySelector('.search-results__articles');
 const searchResultsReady = document.querySelector('.search-results__ready');
 const loader = document.querySelector('.search-results__searching');
 const searchResultsEmpty = document.querySelector('.search-results__empty');
@@ -19,5 +18,5 @@ const searchForm = document.forms.search;
 
 // экспорт переменных
 export { headerAuthButton, signupButton, signInButton, signInButtonPlaceSuccess,
-  searchButton, loginPopup, signupPopup, successPopup, cardsContainer, searchResultsArticles,
+  searchButton, loginPopup, signupPopup, successPopup, cardsContainer,
   searchResultsReady, loader, searchResultsEmpty, searchForm };

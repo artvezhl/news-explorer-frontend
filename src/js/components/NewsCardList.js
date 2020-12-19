@@ -74,30 +74,10 @@ export default class NewsCardList {
       count += 3;
       if (count <= articles.length) {
         for (let i = 0; i < count; i++) {
-          articles[i].style.display = "block";
+          articles[i].style.display = "flex";
         }
       }
     });
-
-    // window.onload = function () {
-    //   var box=document.getElementsByClassName('box');
-    //   var btn=document.getElementById('button');
-    //   for (let i=10;i<box.length;i++) {
-    //     box[i].style.display = "none";
-    //   }
-    //
-    //   var countD = 10;
-    //   btn.addEventListener("click", function() {
-    //     var box=document.getElementsByClassName('box');
-    //     countD += 10;
-    //     if (countD <= box.length){
-    //       for(let i=0;i<countD;i++){
-    //         box[i].style.display = "block";
-    //       }
-    //     }
-    //
-    //   })
-    // }
   }
 
   _setHandlers() {

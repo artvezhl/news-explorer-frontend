@@ -90,15 +90,17 @@ export default class NewsCard {
     event.preventDefault();
     try {
       await this._api.removeCard(cardId);
+      this._removeListeners(currentCard);
       currentCard.parentElement.removeChild(currentCard);
     } catch (err) {
       console.log(err);
     }
   }
 
-  // _removeListeners = () => {
-  //   this._card.querySelector('.place-card__like-icon').removeEventListener('click', this._like);
-  //   this._card.querySelector('.place-card__delete-icon').removeEventListener('click', this._remove);
-  //   this._card.querySelector('.place-card__image').removeEventListener('click', this._popupOpenHandler);
-  // }
+  _removeListeners = (currentCard) => {
+    let cardButton = currentCard.querySelector('.article__remove-button');
+    cardButton.removeEventListener('mouseover', (event) => this._buttonHoverHandler(card, event));
+    cardButton.removeEventListener('mouseout', (event) => this._buttonHoverHandler(card, event));
+    cardButton.removeEventListener('click', this._removeCard);
+  }
 }
