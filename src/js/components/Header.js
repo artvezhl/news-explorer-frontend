@@ -39,16 +39,4 @@ export default class Header extends BaseComponent {
     this._logoutButton.classList.remove('header__button_active');
     this._logoutButton.removeEventListener('click', this._logOut);
   }
-
-  // authorizedHeader() {
-  //   this.render();
-  //   // this._loginButton.classList.remove('header__button_active');
-  //   // this._logoutButton.classList.add('header__button_active');
-  //   // this._logoutButton.addEventListener('click', () => {
-  //   //   localStorage.removeItem('token');
-  //   //   this.render();
-  //   // });
-  // }
-
-
 }

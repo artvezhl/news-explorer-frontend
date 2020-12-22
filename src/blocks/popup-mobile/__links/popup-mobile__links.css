@@ -1,6 +1,6 @@
 @import url('../__link/popup-mobile__link.css');
 
-.popup__links {
+.popup-mobile__links {
   display: flex;
   flex-direction: column;
   margin-top: 1rem;

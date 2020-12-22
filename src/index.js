@@ -11,9 +11,13 @@ import {
   signInButton,
   signInButtonPlaceSuccess,
   searchButton,
+  mobileMenuButton,
+  closeMobileMenuButton,
+  authPopupMobileButton,
   loginPopup,
   signupPopup,
   successPopup,
+  mobilePopup,
   cardsContainer,
   searchForm,
   searchResultsEmpty,
@@ -31,6 +35,7 @@ import FormValidator from "./js/components/FormValidator";
 import PopupSignIn from './js/components/PopupSignIn';
 import PopupSignup from './js/components/PopupSignup';
 import PopupSuccess from "./js/components/PopupSuccess";
+import PopupMobile from "./js/components/PopupMobile";
 import Header from "./js/components/Header";
 
 // TODO remove below to constants
@@ -49,6 +54,10 @@ const signUpPopupArgs = {
 const successPopupArgs = {
   container: successPopup,
 }
+// параметры для мобильного попапа
+const mobilePopupArgs = {
+  container: mobilePopup,
+}
 // параметры для попапа хэдера
 const headerArgs = {}
 // параметры для карточек
@@ -66,6 +75,7 @@ signUpPopupArgs.api = api;
 signInPopupArgs.api = api;
 headerArgs.getUserInfo = api.getUserInfo;
 newsCardArgs.api = api;
+mobilePopupArgs.api = api;
 // создание экземпляра класса NewsApi
 const newsApi = new NewsApi(newsConfig);
 // добавление API в конструктор класса
@@ -80,6 +90,7 @@ const formValidator = (...arg) => new FormValidator(...arg);
 // добавление валидатора в объекты конструкторов классов
 signUpPopupArgs.validator = formValidator;
 signInPopupArgs.validator = formValidator;
+mobilePopupArgs.validator = formValidator;
 // создание экземпляра класса хэдера
 const header = new Header(headerArgs);
 signInPopupArgs.renderHeader = header.render;
@@ -90,18 +101,23 @@ signUpPopupArgs.successPopupOpen = popupSuccess.open;
 const popupSignIn = new PopupSignIn(signInPopupArgs);
 // создание экземпляра класса регистрации
 const popupSignUp = new PopupSignup(signUpPopupArgs);
+// создание экземпляра мобильного попапа
+const mobile = new PopupMobile(mobilePopupArgs);
 
 // рендеринг шапки
 header.render();
 
 // слушатели событий
 headerAuthButton.addEventListener('click', popupSignIn.open);
+authPopupMobileButton.addEventListener('click', popupSignIn.open);
 signupButton.addEventListener('click', popupSignUp.open);
 signupButton.addEventListener('click', popupSignIn.close);
 signInButton.addEventListener('click', popupSignUp.close);
 signInButton.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
+mobileMenuButton.addEventListener('click', mobile.open);
+closeMobileMenuButton.addEventListener('click', mobile.close);
 searchButton.addEventListener('click', (event) => {
   event.preventDefault();
   const stringToFind = searchForm.stringToSearch.value;

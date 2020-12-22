@@ -20,7 +20,9 @@ export default class NewsCard {
     string ?
       this._card.setAttribute('keyword', string) :
       this._card.setAttribute('data-id', article._id);
-    if (article.image) this._card.querySelector('.article__image').setAttribute('src', article.image);
+    (article.image) ?
+      this._card.querySelector('.article__image').setAttribute('src', article.image) :
+      this._card.querySelector('.article__image').setAttribute('src', 'http://drheadache.ru/wp-content/uploads/2017/03/i.jpg');
     if (this._card.querySelector('.article__keyword')) this._card.querySelector('.article__keyword').textContent = article.keyword;
     this._card.querySelector('.article__date').textContent = article.date;
     this._card.querySelector('.article__title').textContent = article.title;

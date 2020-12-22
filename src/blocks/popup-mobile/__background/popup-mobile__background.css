@@ -3,7 +3,7 @@
 
 .popup-mobile__background {
   position: relative;
-  max-height: 286px;
+  min-height: 230px;
   background: rgba(26, 27, 34, 1);
   opacity: 1;
   z-index: 53;

@@ -18,9 +18,12 @@ class Popup {
 
   open() {
     this._toggle();
-    this._popup = this._container.querySelector('.popup__background');
+    this._container.querySelector('.popup__background') ?
+      this._popup = this._container.querySelector('.popup__background') :
+      this._popup = this._container.querySelector('.popup-mobile__background');
     this._formHandler(this._formName);
     this.setEventListeners();
+    document.querySelector('.root').setAttribute('overflow', 'hidden');
   }
 
   _formHandler = (formName) => {
@@ -32,8 +35,10 @@ class Popup {
   }
 
   setEventListeners() {
-    this._popup.querySelector('.popup__close').addEventListener('click', this.close);
-    this._form.addEventListener('submit', this._handleSubmit);
+    this._popup.querySelector('.popup__close') ?
+      this._popup.querySelector('.popup__close').addEventListener('click', this.close) :
+      this._popup.querySelector('.header__mobile-menu_type_opened').addEventListener('click', this.close);
+    if (this._form) this._form.addEventListener('submit', this._handleSubmit);
   }
 
   _handleSubmit(event) {
@@ -76,9 +81,9 @@ class Popup {
   }
 
   _removeListeners() {
-    this._popup.querySelector('.popup__close').removeEventListener('click', this.close);
-    // this._link.removeEventListener('click', this.open);
-// this._link.removeEventListener('click', this._signUpPopupOpen);
+    this._popup.querySelector('.popup__close') ?
+      this._popup.querySelector('.popup__close').removeEventListener('click', this.close) :
+      this._popup.querySelector('.header__mobile-menu_type_opened').removeEventListener('click', this.close);
   }
 }
 
