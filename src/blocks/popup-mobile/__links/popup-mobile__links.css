@@ -1,4 +1,5 @@
 @import url('../__link/popup-mobile__link.css');
+@import url('../__link/_visible/popup-mobile__link_visible.css');
 
 .popup-mobile__links {
   display: flex;

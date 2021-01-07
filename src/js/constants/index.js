@@ -5,7 +5,7 @@ const signupButton = document.querySelector('.popup__link_place_auth-popup');
 const signInButton = document.querySelector('.popup__link_place_reg-popup');
 const signInButtonPlaceSuccess = document.querySelector('.popup__link_place_success-popup');
 const searchButton = document.querySelector('.cover__button');
-const mobileMenuButton = document.querySelector('.header__mobile-menu_type_closed');
+const mobileMenuButton = document.querySelector('.header__mobile-menu');
 const closeMobileMenuButton = document.querySelector('.header__mobile-menu_type_opened');
 const authPopupMobileButton = document.querySelector('.popup-mobile__button');
 // попапы

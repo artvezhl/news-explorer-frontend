@@ -1,13 +1,15 @@
 @import url('../__links/popup-mobile__links.css');
 @import url('../__button/popup-mobile__button.css');
+@import url('../__button/_active/popup-mobile__button_active.css');
+@import url('../__button/_type/_logout/popup-mobile__button_type_logout.css');
 
 .popup-mobile__background {
   position: relative;
-  min-height: 230px;
+  /*min-height: 230px;*/
   background: rgba(26, 27, 34, 1);
   opacity: 1;
   z-index: 53;
   border-bottom-right-radius: 16px;
   border-bottom-left-radius: 16px;
-  padding-top: 56px;
+  padding: 56px 0 1px;
 }

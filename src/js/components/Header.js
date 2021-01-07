@@ -9,6 +9,8 @@ export default class Header extends BaseComponent {
     this._loginName = document.querySelector('.header__auth-name');
     this._savedPages = document.querySelector('.header__saved-page');
     this._articlesInfoName = document.querySelector('.articles-info__name');
+    this._headerMenuButton = document.querySelector('.header__mobile-menu');
+    this._popups = document.querySelectorAll('.popup');
     this.render = this.render.bind(this);
   }
 
@@ -17,6 +19,7 @@ export default class Header extends BaseComponent {
       try {
         const data = await this._getUserInfo();
         this._logIn(data);
+        this.mobileMenuButtonRender();
       } catch (err) {
         console.log(err);
       }
@@ -38,5 +41,17 @@ export default class Header extends BaseComponent {
     this._loginButton.classList.add('header__button_active');
     this._logoutButton.classList.remove('header__button_active');
     this._logoutButton.removeEventListener('click', this._logOut);
+  }
+
+  mobileMenuButtonRender = () => {
+    const popups = Object.values(this._popups);
+    const popupsStatus = popups.every(popup => !popup.classList.contains('popup_is-opened'));
+    (!popupsStatus) ? this._headerMenuButton.classList.remove('header__mobile-menu_active') :
+      this._headerMenuButton.classList.add('header__mobile-menu_active');
+    // (!popupsStatus) ? console.log(this._headerMenuButton.classList) :
+    //   console.log(this._headerMenuButton.classList) && this._headerMenuButton.classList.add('header__mobile-menu_active');
+    // console.log()
+    // popups.forEach(popup => console.log(popup.classList.contains('popup_is-opened')));
+    // console.log(popups.every(popup => !popup.classList.contains('popup_is-opened')));
   }
 }

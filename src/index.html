@@ -26,7 +26,7 @@
             </li>
           </ul>
         </nav>
-        <button class="header__mobile-menu header__mobile-menu_type_closed"></button>
+        <button class="header__mobile-menu header__mobile-menu_active"></button>
       </header>
       <section class="cover">
         <picture class="cover__background">
@@ -153,10 +153,14 @@
           <button class="popup-mobile__menu header__mobile-menu_type_opened"></button>
         </header>
         <div class="popup-mobile__links">
-          <a href="index.html" class="popup-mobile__link">Главная</a>
-          <a href="articles.html" class="popup-mobile__link">Сохранённые статьи</a>
+          <a href="index.html" class="popup-mobile__link popup-mobile__link_visible">Главная</a>
+          <a href="articles.html" class="popup-mobile__link popup-mobile__link_visible">Сохранённые статьи</a>
         </div>
         <button class="popup-mobile__button button">Авторизоваться</button>
+        <button class="header__button popup-mobile__button_type_logout button">
+          <span class="popup-mobile__auth-name"></span>
+          <img src="<%= require('./images/logout-white.svg') %>" alt="logout icon" class="header__logout-icon">
+        </button>
       </div>
     </div>
     <template id="article" style="display: none;">

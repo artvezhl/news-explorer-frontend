@@ -2,6 +2,11 @@
 @import url('./__item/inputs__item.css');
 @import url('./__container/inputs__container.css');
 
+.inputs {
+  display: flex;
+  flex-direction: column;
+}
+
 .inputs:last-child {
   margin-bottom: 10px;
 }

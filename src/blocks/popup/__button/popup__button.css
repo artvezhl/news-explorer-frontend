@@ -4,6 +4,7 @@
   width: 360px;
   height: 64px;
   margin-top: 16px;
+  align-self: center;
 }
 
 .popup__button:disabled {

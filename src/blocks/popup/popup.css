@@ -7,12 +7,12 @@
   height: 100vh;
   z-index: 50;
   background: rgba(0, 0, 0, .5);
-  overflow-y: hidden;
   margin-top: 56px;
 }
 
 @media screen and (min-width: 768px) {
   .popup {
     margin-top: 0;
+    overflow-y: hidden;
   }
 }

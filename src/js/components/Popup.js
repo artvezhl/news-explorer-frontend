@@ -9,6 +9,8 @@ class Popup {
     this._successPopupOpen = props.successPopupOpen;
     this._renderHeader = props.renderHeader;
     this._formName = props.formName;
+    this._mobileMenuHandler = props.mobileMenuRender;
+    this._authButton = props.authButton;
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
@@ -24,6 +26,7 @@ class Popup {
     this._formHandler(this._formName);
     this.setEventListeners();
     document.querySelector('.root').setAttribute('overflow', 'hidden');
+    this._mobileMenuHandler();
   }
 
   _formHandler = (formName) => {
@@ -71,6 +74,7 @@ class Popup {
       this._resetForm();
       this._resetFormErrors();
     }
+    this._mobileMenuHandler();
   }
 
   _resetFormErrors() {

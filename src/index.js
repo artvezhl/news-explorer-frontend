@@ -94,6 +94,11 @@ mobilePopupArgs.validator = formValidator;
 // создание экземпляра класса хэдера
 const header = new Header(headerArgs);
 signInPopupArgs.renderHeader = header.render;
+signInPopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
+successPopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
+signUpPopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
+mobilePopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
+signInPopupArgs.authButton = authPopupMobileButton;
 // создание экземпляра класса попапа успешной регистрации
 const popupSuccess = new PopupSuccess(successPopupArgs);
 signUpPopupArgs.successPopupOpen = popupSuccess.open;
@@ -110,14 +115,21 @@ header.render();
 // слушатели событий
 headerAuthButton.addEventListener('click', popupSignIn.open);
 authPopupMobileButton.addEventListener('click', popupSignIn.open);
+authPopupMobileButton.addEventListener('click', mobile.close);
 signupButton.addEventListener('click', popupSignUp.open);
 signupButton.addEventListener('click', popupSignIn.close);
 signInButton.addEventListener('click', popupSignUp.close);
 signInButton.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSignIn.open);
 signInButtonPlaceSuccess.addEventListener('click', popupSuccess.close);
-mobileMenuButton.addEventListener('click', mobile.open);
-closeMobileMenuButton.addEventListener('click', mobile.close);
+mobileMenuButton.addEventListener('click', () => {
+  mobile.open();
+  header.mobileMenuButtonRender();
+});
+closeMobileMenuButton.addEventListener('click', () => {
+  mobile.close();
+  header.mobileMenuButtonRender();
+});
 searchButton.addEventListener('click', (event) => {
   event.preventDefault();
   const stringToFind = searchForm.stringToSearch.value;

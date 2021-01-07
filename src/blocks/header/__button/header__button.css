@@ -22,3 +22,9 @@
     font-size: 18px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header__button {
+    margin-left: 0;
+  }
+}
