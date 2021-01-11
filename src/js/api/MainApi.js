@@ -52,11 +52,13 @@ export default class MainApi {
   }
 
 // запрос стартовых карточек с сервера
-  getInitialCards() {
-    return fetch(`${this._url}/articles`, {
-      headers: this._headers
-    })
-      .then(res => this._getResponseData(res));
+  getInitialCards = async () => {
+    const result = await fetch(`${this._url}/articles`, {
+      method: 'GET',
+      headers: this._headers,
+      credentials: 'include',
+    });
+    return this._getResponseData(result);
   }
 
   // добавление новой карточки на сервер
@@ -81,7 +83,8 @@ export default class MainApi {
   removeCard = async (cardId) => {
     const result = await fetch(`${this._url}/articles/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers
+      headers: this._headers,
+      credentials: 'include',
     })
     return this._getResponseData(result);
   }

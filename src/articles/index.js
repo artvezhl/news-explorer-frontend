@@ -34,7 +34,7 @@ const newsCardList = new NewsCardList(cardListArgs);
 // рендеринг шапки
 header.render();
 
-const pageRender = new Promise((resolve, reject) => {
+new Promise((resolve, reject) => {
   const savedCards = api.getInitialCards();
   resolve(savedCards);
 })
