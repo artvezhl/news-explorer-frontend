@@ -4,6 +4,8 @@ export default class Header extends BaseComponent {
   constructor({ getUserInfo }) {
     super();
     this._getUserInfo = getUserInfo;
+    this.userName = '';
+    this._isLoggedIn = false;
     this._loginButton = document.querySelector('.header__button_type_login');
     this._logoutButton = document.querySelector('.header__button_type_logout');
     this._loginName = document.querySelector('.header__auth-name');
@@ -18,7 +20,8 @@ export default class Header extends BaseComponent {
     if (localStorage.token) {
       try {
         const data = await this._getUserInfo();
-        this._logIn(data);
+        this.userName = data.name;
+        this._logIn();
         this.mobileMenuButtonRender();
       } catch (err) {
         console.log(err);
@@ -26,12 +29,12 @@ export default class Header extends BaseComponent {
     }
   }
 
-  _logIn = (data) => {
+  _logIn = () => {
     this._savedPages.classList.add('header__saved-page_visible');
     if (this._loginButton) this._loginButton.classList.remove('header__button_active');
     this._logoutButton.classList.add('header__button_active');
-    if (this._articlesInfoName) this._articlesInfoName.textContent = data.name;
-    this._loginName.textContent = data.name;
+    if (this._articlesInfoName) this._articlesInfoName.textContent = this.userName;
+    this._loginName.textContent = this.userName;
     this._logoutButton.addEventListener('click', this._logOut);
   }
 

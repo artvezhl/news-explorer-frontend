@@ -27,6 +27,7 @@ export default class PopupMobile extends Popup {
       this._authButton.classList.remove('popup-mobile__button_active');
       this._savedPages.classList.add('popup-mobile__link_visible');
       this._logoutButton.classList.add('header__button_active');
+      this._userName = this._header.userName;
       if (!this._userName) {
         this._setUserName()
           .then((data) => {

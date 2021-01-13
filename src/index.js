@@ -44,6 +44,7 @@ import Header from "./js/components/Header";
 const signInPopupArgs = {
   container: loginPopup,
   formName: 'auth',
+  authButton: authPopupMobileButton,
 }
 // параметры для попапа регистрации
 const signUpPopupArgs = {
@@ -93,12 +94,11 @@ signInPopupArgs.validator = formValidator;
 mobilePopupArgs.validator = formValidator;
 // создание экземпляра класса хэдера
 const header = new Header(headerArgs);
+mobilePopupArgs.header = header;
 signInPopupArgs.renderHeader = header.render;
-signInPopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
-successPopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
-signUpPopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
-mobilePopupArgs.mobileMenuRender = header.mobileMenuButtonRender;
-signInPopupArgs.authButton = authPopupMobileButton;
+signInPopupArgs.header = header;
+successPopupArgs.header = header;
+signUpPopupArgs.header = header;
 // создание экземпляра класса попапа успешной регистрации
 const popupSuccess = new PopupSuccess(successPopupArgs);
 signUpPopupArgs.successPopupOpen = popupSuccess.open;

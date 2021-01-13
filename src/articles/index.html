@@ -61,19 +61,23 @@
       </section>
       <p class="footer__copyright">&copy; 2020 Supersite, Powered by News API</p>
     </footer>
-<!--    <section class="popup">-->
-<!--      <div class="popup__background slim-block">-->
-<!--        <header class="header header_type_popup-closed">-->
-<!--          <a href="index.html" class="header__logo">NewsExplorer</a>-->
-<!--          <button class="popup__mobile-menu header__mobile-menu_type_opened"></button>-->
-<!--        </header>-->
-<!--        <div class="popup__links">-->
-<!--          <a href="index.html" class="popup__link">Главная</a>-->
-<!--          <a href="articles.html" class="popup__link">Сохранённые статьи</a>-->
-<!--        </div>-->
-<!--        <button class="popup__button button">Авторизоваться</button>-->
-<!--      </div>-->
-<!--    </section>-->
+    <div class="popup popup-mobile" id="mobile-popup">
+      <div class="popup-mobile__background slim-block">
+        <header class="header header_type_popup-closed">
+          <a href="index.html" class="header__logo">NewsExplorer</a>
+          <button class="popup-mobile__menu header__mobile-menu_type_opened"></button>
+        </header>
+        <div class="popup-mobile__links">
+          <a href="index.html" class="popup-mobile__link popup-mobile__link_visible">Главная</a>
+          <a href="articles.html" class="popup-mobile__link popup-mobile__link_visible">Сохранённые статьи</a>
+        </div>
+        <button class="popup-mobile__button button">Авторизоваться</button>
+        <button class="header__button popup-mobile__button_type_logout button">
+          <span class="popup-mobile__auth-name"></span>
+          <img src="<%= require('../images/logout-white.svg') %>" alt="logout icon" class="header__logout-icon">
+        </button>
+      </div>
+    </div>
     <template id="article" style="display: none;">
       <article class="search-results__article article">
         <div class="article__appear-block">
