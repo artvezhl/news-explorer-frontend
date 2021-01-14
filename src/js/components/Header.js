@@ -41,9 +41,10 @@ export default class Header extends BaseComponent {
   _logOut = () => {
     localStorage.removeItem('token');
     this._savedPages.classList.remove('header__saved-page_visible');
-    this._loginButton.classList.add('header__button_active');
+    if (this._loginButton) this._loginButton.classList.add('header__button_active');
     this._logoutButton.classList.remove('header__button_active');
     this._logoutButton.removeEventListener('click', this._logOut);
+    window.open('../../index.html', '_self');
   }
 
   mobileMenuButtonRender = () => {

@@ -61,6 +61,7 @@ export default class PopupMobile extends Popup {
     this._userName = '';
     this._logoutButton.removeEventListener('click', this._logOut);
     this.close();
+    window.open('../../index.html', '_self');
   }
 
   // async _handleSubmit(event) {
