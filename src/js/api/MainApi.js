@@ -74,8 +74,9 @@ export default class MainApi {
         source: props.source,
         link: props.link,
         image: props.imageUrl,
-      })
-    })
+      }),
+      credentials: 'include',
+    });
     return this._getResponseData(result);
   }
 
@@ -88,22 +89,4 @@ export default class MainApi {
     })
     return this._getResponseData(result);
   }
-
-  // постановка лайка
-  // setLike(cardId) {
-  //   return fetch(`${this._url}/cards/like/${cardId}`, {
-  //     method: 'PUT',
-  //     headers: this._headers
-  //   })
-  //     .then(res => this._getResponseData(res));
-  // }
-
-  // удаление лайка
-  // removeLike(cardId) {
-  //   return fetch(`${this._url}/cards/like/${cardId}`, {
-  //     method: 'DELETE',
-  //     headers: this._headers
-  //   })
-  //     .then(res => this._getResponseData(res));
-  // }
 }

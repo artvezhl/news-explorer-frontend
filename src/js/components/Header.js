@@ -52,10 +52,5 @@ export default class Header extends BaseComponent {
     const popupsStatus = popups.every(popup => !popup.classList.contains('popup_is-opened'));
     (!popupsStatus) ? this._headerMenuButton.classList.remove('header__mobile-menu_active') :
       this._headerMenuButton.classList.add('header__mobile-menu_active');
-    // (!popupsStatus) ? console.log(this._headerMenuButton.classList) :
-    //   console.log(this._headerMenuButton.classList) && this._headerMenuButton.classList.add('header__mobile-menu_active');
-    // console.log()
-    // popups.forEach(popup => console.log(popup.classList.contains('popup_is-opened')));
-    // console.log(popups.every(popup => !popup.classList.contains('popup_is-opened')));
   }
 }

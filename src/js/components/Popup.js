@@ -43,6 +43,14 @@ class Popup {
       this._popup.querySelector('.popup__close').addEventListener('click', this.close) :
       this._popup.querySelector('.header__mobile-menu_type_opened').addEventListener('click', this.close);
     if (this._form) this._form.addEventListener('submit', this._handleSubmit);
+    // document.addEventListener('keydown', (event) => {
+    //   if (event.key === 'Escape') this.close();
+    // });
+    // window.onkeydown = function( event ) {
+    //   if (event.keyCode == 27) {
+    //     this.close();
+    //   }
+    // };
   }
 
   _handleSubmit(event) {
@@ -86,6 +94,9 @@ class Popup {
   }
 
   _removeListeners() {
+    // document.removeEventListener('keydown', (event) => {
+    //   if (event.key === 'Escape') this.close();
+    // });
     this._popup.querySelector('.popup__close') ?
       this._popup.querySelector('.popup__close').removeEventListener('click', this.close) :
       this._popup.querySelector('.header__mobile-menu_type_opened').removeEventListener('click', this.close);

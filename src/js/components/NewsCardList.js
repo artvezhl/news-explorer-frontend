@@ -29,26 +29,10 @@ export default class NewsCardList {
 
   // принимает массив экземпляров карточек и отрисовывает их
   renderResults(cards, string) {
-    // if (loader) loader.classList.add('search-results__searching_active');
-    // if (searchResultsEmpty) searchResultsEmpty.classList.remove('search-results__empty_active');
-    // console.log(cards);
     this._cards = cards;
     cards.forEach((item) => {
       this.addCard(item, string);
     })
-    // this._cards.onload = this.showMore();
-      // .then(() => {
-      // this._card.onload = this.showMore();
-    // });
-    // this._cardsNumberRender(cards.length);
-    // this._keywordsRender(cards);
-    // if (!cards.length) {
-    //   searchResultsReady.classList.remove('search-results__ready_active');
-    //   searchResultsEmpty.classList.add('search-results__empty_active');
-    // } else {
-    //   searchResultsReady.classList.add('search-results__ready_active');
-    // }
-    // loader.classList.remove('search-results__searching_active');
   }
 
   // отвечает за отрисовку лоудера
@@ -64,10 +48,25 @@ export default class NewsCardList {
   // отвечает за функциональность кнопки «Показать ещё»
   showMore() {
     const articles = document.getElementsByClassName('article');
-    const button = document.querySelector('.search-results__button');
+    // const button = document.querySelector('.search-results__button');
     for (let i = 3; i < articles.length; i++) {
       articles[i].style.display = "none";
     }
+    // let count = 3;
+    // button.addEventListener("click", () => {
+    //   const articles = document.getElementsByClassName('article');
+    //   count += 3;
+    //   if (count <= articles.length) {
+    //     for (let i = 0; i < count; i++) {
+    //       articles[i].style.display = "flex";
+    //     }
+    //   }
+    // });
+    this._setHandlers();
+  }
+
+  _setHandlers() {
+    const button = document.querySelector('.search-results__button');
     let count = 3;
     button.addEventListener("click", () => {
       const articles = document.getElementsByClassName('article');
@@ -78,9 +77,5 @@ export default class NewsCardList {
         }
       }
     });
-  }
-
-  _setHandlers() {
-    const button = document.querySelector('.search-results__button');
   }
 }
