@@ -8,7 +8,7 @@
     "start": "node app.js",
     "dev": "NODE_ENV=development webpack-dev-server --mode development --open --watch",
     "build": "NODE_ENV=production rimraf dist && webpack --mode production",
-    "deploy": "npm run build && scp -r ./dist/* vezhl@84.201.176.196:/home/vezhl/news-explorer-frontend"
+    "deploy": "npm run build && scp -r ./dist/* vezhl@84.201.174.14:/home/vezhl/news-explorer-frontend"
   },
   "repository": {
     "type": "git",
