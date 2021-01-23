@@ -5,6 +5,7 @@ const apiConfig = {
   headers: {
     'Content-Type': 'application/json',
     'authorization': `${localStorage.getItem('token')}`,
+    'Access-Control-Allow-Headers': '*',
   }
 }
 
