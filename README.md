@@ -1,7 +1,7 @@
 # news-explorer-frontend
 Frontend for News-Explorer Diploma project
 
-[Ссылка на проект](https://artvezhl.github.io/news-explorer-frontend/)
+[Ссылка на проект](https://www.diploma-web.tk/)
 
 ### Учебный проект, в котором реализованы: 
 - адаптивная верстка
@@ -15,6 +15,7 @@ Frontend for News-Explorer Diploma project
 - [Babel CLI](https://babeljs.io/docs/en/babel-cli#docsNav)
 - [Babel Core](https://babeljs.io/docs/en/babel-core)
 - [Babel Preset Evnvironment](https://babeljs.io/docs/en/babel-preset-env#docsNav)
+- [Autoprefixer](https://www.npmjs.com/package/autoprefixer)
 - [Сore JS](https://github.com/zloirock/core-js#readme)
 - [PostCSS](https://postcss.org/)
 - [Define plugin](https://webpack.js.org/plugins/define-plugin/)
