@@ -1,0 +1,13 @@
+.article__subtitle {
+  font-family: var(--roboto);
+  font-size: 1rem;
+  line-height: 1.375em;
+  margin: .5rem 0;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .article__subtitle {
+    padding: 0 1.5rem;
+  }
+}

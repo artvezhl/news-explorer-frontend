@@ -1,0 +1,12 @@
+.popup__button {
+  background-color: #2F71E5;
+  color: white;
+  width: 360px;
+  height: 64px;
+  margin-top: 16px;
+  align-self: center;
+}
+
+.popup__button:disabled {
+  background-color: #E6E8EB;
+}

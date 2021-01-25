@@ -1,0 +1,29 @@
+.header__mobile-menu {
+  display: none;
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  background-size: cover;
+  background: transparent;
+  border: 0;
+  background: url("../../../images/mobile-menu.svg");
+  /*background: url("../../../images/mobile-menu.svg");*/
+}
+
+/*.header__mobile-menu_type_closed {*/
+/*  background: url("../../../images/mobile-menu.svg");*/
+/*}*/
+
+/*.header__mobile-menu_type_opened {*/
+/*  background: url("../../../images/cross.svg");*/
+/*}*/
+
+/*.header__mobile-menu_color_black {*/
+/*  background: url("../../../images/mobile-menu_black.svg");*/
+/*}*/
+
+/*@media screen and (min-width: 768px) {*/
+/*  .header__mobile-menu {*/
+/*    display: none;*/
+/*  }*/
+/*}*/

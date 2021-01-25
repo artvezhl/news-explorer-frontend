@@ -1,0 +1,22 @@
+@import url('../__article/search-results__article.css');
+
+.search-results__articles {
+  display: grid;
+  grid-gap: 10px;
+  margin: 24px 0;
+  grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+}
+
+@media screen and (min-width: 768px) {
+  .search-results__articles {
+    grid-template-columns: repeat(3, minmax(224px, 1fr));
+    margin: 32px 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .search-results__articles {
+    margin: 62px 0;
+    grid-gap: 16px;
+  }
+}

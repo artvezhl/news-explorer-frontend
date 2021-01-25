@@ -1,0 +1,13 @@
+@import url('./__place/articles-info__place.css');
+@import url('./__title/articles-info__title.css');
+@import url('./__keywords/articles-info__keywords.css');
+
+.articles-info {
+  margin: 4rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .articles-info {
+    margin-bottom: 6rem;
+  }
+}

@@ -1,0 +1,12 @@
+.popup__link {
+  color: #2F71E5;
+  font-family: var(--inter);
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup__link:hover {
+  text-decoration: underline;
+}

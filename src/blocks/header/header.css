@@ -1,0 +1,39 @@
+@import url('__logo/header__logo.css');
+@import url('./__mobile-menu/header__mobile-menu.css');
+@import url('__mobile-menu/_active/header__mobile-menu_active.css');
+@import url('__mobile-menu/_color/header__mobile-menu_color_black.css');
+@import url('./__menu/header__menu.css');
+
+.header {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: -80px;
+  display: flex;
+  width: calc(100% - 2rem);
+  max-height: 66px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(196,196,196,.2);
+  z-index: 50;
+}
+
+.header_type_popup-opened {
+  position: fixed;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    width: calc(100% - 5rem);
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    width: calc(100% - 12.75rem);
+  }
+}

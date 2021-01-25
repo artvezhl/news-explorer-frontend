@@ -1,0 +1,13 @@
+@import url('__background/popup-mobile__background.css');
+@import url('__menu/popup-mobile__menu.css');
+
+.popup-mobile {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background: rgba(0, 0, 0, .5);
+  overflow-y: hidden;
+  margin-top: 0;
+}

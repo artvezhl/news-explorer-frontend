@@ -1,0 +1,16 @@
+.article__title {
+  font-family: var(--roboto-slab);
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 26px;
+  margin: 0.75rem 0;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .article__title {
+    padding: 0 1.5rem;
+    font-size: 26px;
+    line-height: 30px;
+  }
+}

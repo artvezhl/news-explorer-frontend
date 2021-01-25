@@ -1,0 +1,24 @@
+.cover__image {
+  object-fit: cover;
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .cover__image {
+    object-fit: cover;
+    width: 100%;
+    min-height: 576px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cover__image {
+    max-height: 400px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cover__image {
+    max-height: 536px;
+  }
+}

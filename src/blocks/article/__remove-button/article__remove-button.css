@@ -1,0 +1,29 @@
+.article__remove-button {
+  background-image: url("../../../images/remove-button.svg");
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .article__remove-button {
+    top: .5rem;
+    right: .5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .article__remove-button {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .article__remove-button:hover {
+    background-image: url("../../../images/remove-button_active.svg");
+  }
+}

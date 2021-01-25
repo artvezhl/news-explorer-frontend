@@ -1,0 +1,33 @@
+@import url('./__image/article__image.css');
+@import url('./__date/article__date.css');
+@import url('./__title/article__title.css');
+@import url('./__subtitle/article__subtitle.css');
+@import url('./__source/article__source.css');
+@import url('./__like-button/article__like-button.css');
+@import url('./__remove-button/article__remove-button.css');
+@import url('./__keywords/article__keywords.css');
+@import url('./__keyword/article__keyword.css');
+@import url('__appear-block/article__appear-block.css');
+@import url('__appear-phrase/article__appear-phrase.css');
+@import url('__appear-block/_active/article__appear-block_active.css');
+@import url('./__like-button/_active/article__like-button_active.css');
+@import url('./__like-button/_hover/article__like-button_hover.css');
+
+.article {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/*@media screen and (min-width: 1024px) {*/
+/*  .article {*/
+/*    padding-bottom: 24px;*/
+/*  }*/
+/*}*/
+
+/*@media screen and (max-width: 1023px) {*/
+/*  .article {*/
+/*    padding-bottom: 16px;*/
+/*  }*/
+/*}*/

@@ -1,0 +1,35 @@
+.article__like-button {
+  background-image: url("../../../images/like_disabled.svg");
+  height: 40px;
+  width: 40px;
+  border: none;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/*.article__like-button:active {*/
+/*  background-image: url("../../../images/like_marked.svg");*/
+/*}*/
+
+@media screen and (min-width: 768px) {
+  .article__like-button {
+    top: .5rem;
+    right: .5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .article__like-button {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+  /*.article__like-button:hover {*/
+  /*  background-image: url("../../../images/like_hover.svg");*/
+  /*}*/
+  /*.article__like-button:active {*/
+  /*  background-image: url("../../../images/like_marked.svg");*/
+  /*}*/
+}

@@ -1,0 +1,30 @@
+@import url('../__logout-icon/header__logout-icon.css');
+@import url('./_type/header__button_type.css');
+
+.header__button {
+  display: none;
+  height: 40px;
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  padding: 0;
+  margin: 0 0 0 16px;
+  font-family: var(--roboto);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .header__button {
+    height: 48px;
+    margin: 0 0 0 32px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header__button {
+    margin-left: 0;
+  }
+}

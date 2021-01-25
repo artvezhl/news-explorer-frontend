@@ -1,0 +1,19 @@
+.about__subtitle {
+  font-family: var(--roboto);
+  font-weight: normal;
+  font-size: 1.125rem;
+  line-height: 1.3em;
+  margin-bottom: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .about__subtitle {
+    margin-top: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about__subtitle {
+    margin-top: 18px;
+  }
+}

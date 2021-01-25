@@ -1,0 +1,15 @@
+.search-results__title {
+  font-family: var(--roboto-slab);
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 34px;
+  margin: 0 0 32px;
+}
+
+@media screen and (min-width: 1024px) {
+  .search-results__title {
+    font-size: 40px;
+    line-height: 46px;
+    margin-bottom: 64px;
+  }
+}

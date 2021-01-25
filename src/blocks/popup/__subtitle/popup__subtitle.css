@@ -1,0 +1,11 @@
+@import url('../__link/popup__link.css');
+@import url('../__link/_place/_success-popup/popup__link_place_success-popup.css');
+
+.popup__subtitle {
+  text-align: center;
+  font-family: var(--inter);
+  font-size: 14px;
+  line-height: 17px;
+}
+
+

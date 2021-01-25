@@ -1,0 +1,9 @@
+.popup-mobile__menu {
+  width: 1.5em;
+  height: 1.5em;
+  cursor: pointer;
+  background-size: cover;
+  background: transparent;
+  border: 0;
+  background: url("../../../images/cross.svg");
+}

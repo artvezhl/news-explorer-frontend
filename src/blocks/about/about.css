@@ -1,0 +1,27 @@
+@import url('./__image/about__image.css');
+@import url('./__info/about__info.css');
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 3.75rem;
+  max-height: 752px;
+}
+
+@media screen and (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    align-items: center;
+    max-height: 354px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about {
+    min-height: 624px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

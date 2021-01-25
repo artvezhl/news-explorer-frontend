@@ -1,0 +1,7 @@
+.inputs__container {
+  margin-bottom: 30px;
+}
+
+.inputs__container:last-of-type {
+  margin-bottom: 16px;
+}

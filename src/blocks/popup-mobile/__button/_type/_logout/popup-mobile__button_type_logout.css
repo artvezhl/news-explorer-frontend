@@ -1,0 +1,7 @@
+.popup-mobile__button_type_logout {
+  height: 48px;
+  align-self: center;
+  margin-bottom: 16px;
+  min-width: 100px;
+  /*width: min-content;*/
+}

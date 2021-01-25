@@ -1,0 +1,12 @@
+@import url('__hidden/error-message__hidden.css');
+@import url('__error/error-message__error.css');
+
+.error-message {
+  font-family: var(--inter);
+  color: #FF0000;
+  font-size: 12px;
+  line-height: 15px;
+  transition: .3s;
+  padding: 0px;
+  opacity: 1;
+}
