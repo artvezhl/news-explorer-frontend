@@ -2,6 +2,7 @@
 Frontend for News-Explorer Diploma project
 
 [Ссылка на проект](https://www.diploma-web.tk/)
+[Ссылка на репозиторий API](https://github.com/artvezhl/news-explorer-api)
 
 ### Учебный проект, в котором реализованы: 
 - адаптивная верстка
